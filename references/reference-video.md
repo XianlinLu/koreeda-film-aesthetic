@@ -1,31 +1,31 @@
-# 参考视频转译
+# Reference Video Translation
 
-## 素材概况
+## Source profile
 
-用户提供的 `Kenopsia` 参考片约 79.6 秒、16:9、无对白，以钢琴与环境声串联校园记忆。它的优势是强视觉钩子、碎片化回忆、微观特写和静止结尾；风险是快切、强逆光与超现实意象过多时容易压过人物关系。
+The supplied `Kenopsia` reference is approximately 79.6 seconds, 16:9, and dialogue-free. Piano and environmental sound connect fragments of school-age memory. Its strengths are a strong visual hook, associative montage, tactile close-ups, and a still closing image. Its risk is that rapid cutting, strong backlight, and repeated surreal images can overwhelm the human relationship.
 
-参考视频本体不放入 Skill 仓库，因为 Lumina 导入器不接受 `.mp4`。运行时把视频保留在画布参考区。
+The video itself is not included in the Skill repository because Lumina's importer does not accept `.mp4`. Keep it as a runtime reference on the canvas.
 
-## 可吸收的结构
+## Transferable structure
 
-- 00:00–00:14：用异常或缺席建立情绪钩子。
-- 00:15–00:51：通过动作、地点或声音关联记忆碎片。
-- 00:51–01:03：用手、眼神、纸张、光线等细节收紧情绪。
-- 01:03–01:15：回到较长、静止的空间镜头，让画内微动完成余韵。
-- 01:15 后：黑场与极简片尾，不再补充解释。
+- 00:00–00:14: establish an emotional hook through absence or an unfamiliar condition.
+- 00:15–00:51: connect memory fragments through action, place, or sound.
+- 00:51–01:03: tighten emotion with hands, eyelines, paper, light, or other sensory detail.
+- 01:03–01:15: return to a longer, still spatial shot and let small in-frame movement carry the afterimage.
+- After 01:15: use black and minimal end text without additional explanation.
 
-## 转译为家庭短剧
+## Translation into family drama
 
-保留“现实锚点—记忆碎片—现实回归”的形状，但让现实中的人物任务成为主线。例如整理旧房时，每碰到一个物件闪回一次不完整记忆；结尾仍回到人物继续整理，而不是用奇观替代关系变化。
+Keep the shape “present anchor → memory fragments → return to the present,” while an ordinary task remains the story spine. For example, during the clearing of an old home, each object may trigger one incomplete memory; the ending returns to the characters continuing the task rather than replacing their relationship with spectacle.
 
-记忆段落使用以下约束：
+Apply these constraints:
 
-- 只选一个贯穿物件或声音，不堆叠象征。
-- 最多一个原创超现实意象，并与人物关系直接相关。
-- 碎片镜头平均 1.5–3 秒，现实锚点镜头 5–10 秒。
-- 至少一次完全无音乐，只保留环境声。
-- 结尾用固定远景或中景，让风、窗帘、蒸汽、雨水等画内微动承担时间感。
+- Choose one recurring object or sound rather than stacking symbols.
+- Allow at most one original surreal image, directly tied to the relationship.
+- Keep fragments around 1.5–3 seconds and present-day anchors around 5–10 seconds.
+- Include at least one section with ambience only and no music.
+- End with a locked wide or medium shot in which wind, a curtain, steam, rain, or another small in-frame motion carries time.
 
-## 不复制的内容
+## Do not copy
 
-不复用燃烧钢琴、指尖蝴蝶、水火同室、校园走廊奔跑等具体组合；不沿用原片标题、字幕、人物造型、镜头顺序或音乐。把“记忆如何被空间唤起”作为方法，而不是把原片意象换皮。
+Do not reuse the combinations of a burning piano, a butterfly on a fingertip, fire inside a flooded room, or running through a school corridor. Do not reuse the title, typography, wardrobe, shot order, or music. Transfer the method—memory activated by place—not the reference's images.

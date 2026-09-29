@@ -1,49 +1,50 @@
-# 美学转译指南
+# Aesthetic Translation Guide
 
-## 核心目标
+## Goal
 
-营造温和、克制、具有人情观察的当代家庭电影感。关注家庭成员如何在共同生活中形成、错开或重新理解彼此；把戏剧性藏在行为、空间、声音与省略中。
+Create gentle, restrained, human-centered contemporary family cinema. Focus on how people form, miss, or rediscover one another through shared life. Put dramatic weight in behavior, space, sound, and omission.
 
-当用户以在世导演为参照时，把名称视为审美意图，而不是生成指令。下游提示词只写可观察的叙事、摄影、表演、声音与美术特征。
+When a user names a living filmmaker, treat the name as an aesthetic signal rather than a generation instruction. Downstream prompts should contain only observable narrative, cinematography, performance, sound, and production-design traits.
 
-## 叙事
+## Narrative
 
-- 从一次晚饭、搬家前夜、临时照看、失物、旧物归还等具体事件进入。
-- 人物同时拥有善意和局限，不把任何一方写成单一坏人。
-- 关注血缘家庭、选择形成的家庭，以及照顾行为如何改变归属感。
-- 重大背景事件尽量留在画外，通过习惯改变、物件缺席或不完整对话显现。
-- 每场只推进一个关系变化；转折来自人物重新理解一个细节，而不是秘密揭晓。
-- 结尾给出情绪方向，但不替观众下结论。
+- Enter through one concrete event: dinner, the night before a move, temporary childcare, a lost object, or the return of an old possession.
+- Give every character both generosity and limitations; avoid a single villain.
+- Explore both blood relations and chosen family through acts of care and belonging.
+- Keep major background events off-screen when possible; reveal them through changed routines, missing objects, or incomplete conversation.
+- Advance one relationship change per scene. Let a character reinterpret a detail instead of discovering a sensational secret.
+- Give the ending an emotional direction without announcing a conclusion.
 
-## 表演与对白
+## Performance and dialogue
 
-- 使用停顿、抢话、答非所问、重复确认和话题转移。
-- 让手部动作、目光落点和身体距离承担情绪。
-- 为演员设置明确小任务，让情绪在动作中发生。
-- 儿童与非职业感人物优先获得场景目标和可执行动作，不要求背诵成人化长台词。
-- 避免哭喊、主题宣言、解释性旁白和“我终于明白了”式总结。
+- Use pauses, interruptions, evasive answers, repeated questions, and changes of subject.
+- Let hand activity, eyelines, and physical distance carry emotion.
+- Give performers a practical task so feeling emerges through behavior.
+- For children or non-professional naturalism, favor scene goals and playable actions over adult-like memorized speeches.
+- Avoid shouting, thematic declarations, explanatory voice-over, and “now I understand” conclusions.
 
-## 摄影与美术
+## Camera and production design
 
-- 摄影机多处于坐着或站着的人的视线高度。
-- 用固定中景、全景和门框/窗框内构图建立人物与生活空间的关系。
-- 允许人物暂时离开画面，让镜头继续停留在空间或物件上。
-- 使用自然窗光、阴天散射光与室内实用灯，保留窗外层次和真实肤色。
-- 主色可从木色、米灰、旧白、暗绿、褪色蓝中选择 2–3 种。
-- 景深适中，让人物与环境同时保有信息；保留轻微不完美，避免仿旧滤镜堆叠。
+- Keep the camera near a seated or standing character's eye level.
+- Establish relationships through locked medium/wide shots and frames within doors or windows.
+- Let a character leave the frame while the camera remains with the room or object.
+- Use window light, overcast diffusion, and practical lamps while preserving exterior detail and natural skin tones.
+- Choose two or three dominant colors from wood, warm gray, worn white, muted green, and faded blue.
+- Use moderate depth of field so both people and their environment remain informative.
+- Preserve small imperfections without stacking vintage filters or artificial handheld shake.
 
-## 节奏与声音
+## Rhythm and sound
 
-- 动作开始前多留半拍，结束后再停一拍。
-- 对话不必句句反打；可让摄影机停留在倾听者、手上或空座位。
-- 用动作匹配、环境声延续或重复物件转场。
-- 环境声体现生活仍在继续：水管、锅盖、风扇、电梯、远处电视、雨棚。
-- 音乐少而轻；拿掉音乐后场景仍应成立。
+- Hold half a beat before an action and another beat after it ends.
+- Do not cover every line with shot/reverse-shot; stay on a listener, a hand, or an empty chair when useful.
+- Transition through matched action, continuing ambience, or a recurring object.
+- Let plumbing, cookware, fans, elevators, distant television, or rain prove that life continues beyond the frame.
+- Keep music sparse. The scene should still work when music is removed.
 
-## 禁用倾向
+## Avoid
 
-- 不在提示词中使用导演姓名、“仿某电影”或“一比一复刻”。
-- 不复制具体作品的角色组合、著名场面、构图序列、对白或情节结构。
-- 不用强反转、疾病奇观、催泪配乐、慢动作拥抱、全员和解或说教字幕强行收束。
-- 不用过度对称、广告级洁净布景、霓虹赛博色、极端浅景深制造廉价电影感。
-- 不让生成模型添加水印、字幕、品牌标识、畸形肢体或不合逻辑的背景人物。
+- Do not use a filmmaker's name, “in the style of,” or “one-to-one remake” in generation prompts.
+- Do not reproduce a known cast configuration, famous scene, shot sequence, dialogue, plot, or score.
+- Avoid forced twists, illness spectacle, manipulative music, slow-motion embraces, universal reconciliation, and moralizing title cards.
+- Avoid excessive symmetry, spotless advertising sets, neon cyber palettes, and shallow focus in every shot.
+- Prevent watermarks, captions, brand marks, malformed bodies, and illogical background people.

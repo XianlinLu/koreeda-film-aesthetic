@@ -1,45 +1,45 @@
-# 成片前质量检查
+# Final Quality Check
 
-每项按 0–2 分评分：0 为未满足，1 为勉强满足，2 为明确满足。总分低于 20/26，或任一“阻断项”为 0 时，先修复再交付。
+Score each item from 0 to 2: 0 = absent, 1 = weak, 2 = clear. Revise before delivery when the total is below 20/26 or any blocker scores 0.
 
-## 故事
+## Story
 
-- 能用一句话说清表层事件和关系变化。
-- 每个主要人物都有具体欲望，不只是承担功能。
-- 情绪主要通过动作、空间与声音呈现。
-- 删除了不必要的解释、反派、巧合与强反转。
-- 结尾回响开头，同时保留解释空间。
+- The surface event and relationship change fit in one sentence.
+- Every principal character has a concrete want rather than a functional role.
+- Action, space, and sound carry most of the emotion.
+- Unnecessary explanation, villains, coincidences, and forced twists are removed.
+- The ending echoes the opening while leaving interpretive space.
 
-## 连续性（阻断项）
+## Continuity — blocker
 
-- 同一人物的脸、年龄感、发型、服装与随身物一致。
-- 场景布局、窗光方向、天气、时段与关键物件位置一致。
-- 轴线、视线、进出方向和动作衔接可成立。
-- 每个镜头提示词写全锚点，没有依赖“同上”。
+- Face, apparent age, hair, clothing, and carried objects remain consistent.
+- Layout, window light, weather, time, and key-object positions remain consistent.
+- Screen direction, eyelines, entrances, exits, and action matches are plausible.
+- Every prompt repeats complete anchors instead of relying on “same as above.”
 
-## 画面与运动
+## Image and motion
 
-- 每镜只有一个主要动作，并能在目标时长内自然完成。
-- 运镜有叙事理由；没有理由时使用固定镜头。
-- 特写提供了新信息，而非单纯美化。
-- 中景、全景和呼吸镜头足以维持生活空间。
-- 没有人脸漂移、肢体畸变、凭空新增物件、文字或水印。
+- Each shot has one primary action that fits its duration.
+- Camera movement has a narrative reason; otherwise the camera is locked.
+- Every close-up adds information rather than decoration.
+- Medium shots, wide shots, and breathing shots preserve a lived-in space.
+- No face drift, malformed bodies, invented objects, text, or watermarks remain.
 
-## 声音与节奏
+## Sound and rhythm
 
-- 只听声音也能辨认空间和时间。
-- 对白口语化，并留有停顿或未说完的部分。
-- 音乐没有过早提示观众应该感动。
-- 镜头进入与离开各留出呼吸余量。
-- 删除任一镜头时，能说明损失了什么信息或情绪。
+- Sound alone establishes place and time.
+- Dialogue is conversational and contains pauses or unfinished thoughts.
+- Music does not tell the audience to feel before the scene earns it.
+- The beginning and end of each shot have breathing room.
+- Removing any shot would cause a specific loss of information or emotion.
 
-## 画布交付（阻断项）
+## Canvas delivery — blocker
 
-- 脚本、分镜、参考资产、关键帧、视频与声音分组清楚。
-- 每个成片镜头都能回溯到一个分镜条目和对应参考图。
-- 只保留最佳有效版本；少数备选已明确标注选择点。
-- 最终镜头按播放顺序排列，总时长与目标误差不超过 2 秒。
+- Script, storyboard, references, keyframes, videos, and sound are clearly grouped.
+- Every final video traces back to a storyboard entry and visual reference.
+- Only the strongest valid version remains; limited alternatives have an explicit decision label.
+- Final shots are in playback order and total duration is within two seconds of the target.
 
-## 修复顺序
+## Repair order
 
-先修复故事因果，再修复人物/场景锚点，然后修复单镜动作，最后微调色彩、音乐与转场。单个镜头最多重试两次；仍失败时缩短动作、减少入镜人物或改为固定机位，不继续堆叠提示词。
+Fix story causality first, character/location anchors second, single-shot action third, and color, music, and transitions last. Retry one shot no more than twice. If it still fails, shorten the action, reduce the number of visible people, or use a locked camera instead of adding more prompt clauses.

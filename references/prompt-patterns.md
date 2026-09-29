@@ -1,52 +1,52 @@
-# 提示词结构
+# Prompt Patterns
 
-每个镜头都填入具体人物、场景与动作，并完整重复连续性锚点。下游提示词不写在世导演姓名、片名或“复刻”要求。
+Fill every bracket with shot-specific information and repeat complete continuity anchors in every prompt. Do not include a living filmmaker's name, a film title, or a remake request in downstream prompts.
 
-## 人物基准图
-
-```text
-[画幅]，写实真人角色基准图。[年龄感、面部特征、发型、体态]，[服装层次、颜色、材质、鞋与随身物]。自然站姿，表情克制，正面与四分之三侧面可辨识，柔和自然光，中性背景，自然肤色，适中景深，细腻但不过度锐化。无文字、无水印、无品牌标识、无夸张美妆。
-```
-
-## 场景基准图
+## Character reference
 
 ```text
-[画幅]，写实真人电影场景。[地点、空间布局、门窗方向、家具与生活痕迹]，[时间、天气、主光方向]，[木色/米灰/旧白/暗绿/褪色蓝中的主色组合]。人物暂不入镜，适中景深，保留窗外层次与真实材质。无文字、无水印、无品牌标识。
+[Aspect ratio], live-action character reference. [Apparent age, facial traits, hair, build], [clothing layers, colors, materials, shoes, carried object]. Natural stance and restrained expression; recognizable front and three-quarter views; soft natural light, neutral background, natural skin, moderate depth of field, detailed without oversharpening. No text, watermark, brand mark, or exaggerated makeup.
 ```
 
-## 分镜图像
+## Location reference
 
 ```text
-[画幅]，写实真人电影画面。[完整人物锚点]位于[完整场景锚点]，正在[单一可见动作]。[人物之间的距离、视线与遮挡]。[景别]，[机位高度与角度]，[固定构图或框中框关系]。[时间、天气、主光方向]，自然肤色，低饱和中性色，适中景深，保留生活痕迹，轻微胶片颗粒。情绪通过[手部动作/停顿/物件]含蓄呈现。无文字、无水印、无品牌标识。
+[Aspect ratio], live-action cinematic location. [Place, floor relationships, doors and windows, furniture, lived-in traces], [time, weather, key-light direction], with [two or three muted dominant colors]. No people; moderate depth of field; exterior detail and material texture retained. No text, watermark, or brand mark.
 ```
 
-## 逐镜视频
+## Storyboard image
 
 ```text
-持续[5/10]秒，延续参考图中的人物身份、服装、场景布局、光线与色彩。镜头从[起始画面]开始。[人物]完成[一个连续动作]，在[时间点]发生[细微表情、视线或动作变化]，最后停在[结束画面]。摄影机[固定/缓慢平移/轻微跟随/极慢推进]，运动平稳且有叙事动机。保持自然速度和真实物理，不新增人物或物件，不改变脸部、服装、天气与空间结构，无镜头跳变、肢体畸变、文字或水印。
+[Aspect ratio], live-action cinematic frame. [Complete character anchor] is in [complete location anchor], performing [one visible action]. [Distance, eyelines, and occlusion between characters]. [Shot scale], [camera height and angle], [locked composition or frame-within-frame]. [Time, weather, key-light direction], natural skin, muted neutrals, moderate depth of field, lived-in detail, subtle film grain. Express emotion through [hand action, pause, or object]. No text, watermark, or brand mark.
 ```
 
-## 记忆碎片视频
+## Shot video
 
 ```text
-持续[1.5–3]秒，作为[现实动作/物件/声音]触发的主观记忆。保留[人物或场景锚点]中的关键识别特征，只呈现[一个动作或一个感官细节]。构图与现实段落通过[动作方向/颜色/声音]形成关联。允许轻微动态模糊或曝光变化；不复制参考视频的具体意象，不新增第二个超现实元素，无文字水印。
+Duration [5/10] seconds. Preserve the reference image's identity, wardrobe, location layout, light, and color. Begin on [opening frame]. [Character] completes [one continuous action]; at [time point], [small expression, eyeline, or action change] occurs; end on [closing frame]. Camera is [locked / slow pan / gentle follow / very slow push] with stable, motivated movement. Keep natural speed and plausible physics. Do not add people or objects, alter faces, clothing, weather, or spatial layout, jump the camera, deform bodies, or add text and watermarks.
 ```
 
-## 声音
+## Memory fragment
 
 ```text
-真实[室内/室外]环境声。近处是[动作细节声]，中景是[持续环境声]，远处是[空间延伸声]。对白自然、音量稳定、保留短暂停顿。无夸张混响，无预告片式冲击音。若使用音乐：少量原声乐器、节奏稀疏、低于对白，在[节点]进入并于[节点]退出。
+Duration [1.5–3] seconds. A subjective memory triggered by [present action, object, or sound]. Preserve the defining traits of [character or location anchor] and show only [one action or sensory detail]. Link the composition to the present through [movement direction, color, or sound]. Allow slight motion blur or exposure shift. Do not copy an exact image from the reference film, add a second surreal element, or add text and watermarks.
 ```
 
-## 分镜条目示例
+## Sound
 
 ```text
-镜 04｜10 秒｜关系试探｜厨房，中景，固定机位
-动作：母亲把多盛的一碗饭推到空座位前，停一下，又拉回自己面前。
-声音：电饭煲保温声；走廊里有人关门；无音乐。
-起始：两人相对坐着，空座位在画面右侧。
-结束：母亲低头夹菜，孩子看向那只空碗。
-连续性：人物服装、餐桌方向、右侧窗光与三只不同颜色的碗均和基准图一致。
+Authentic [interior/exterior] ambience. Near field: [action detail]. Mid field: [continuous room or street tone]. Far field: [sound extending the space]. Dialogue is natural, stable, and includes brief pauses. No exaggerated reverb or trailer impacts. If music is used, choose sparse acoustic instruments, keep it below dialogue, enter at [point], and leave at [point].
 ```
 
-示例只说明信息密度，不在新故事中复用其情节或构图。
+## Shot entry example
+
+```text
+Shot 04 | 10 s | relationship test | kitchen, medium shot, locked camera
+Action: The mother slides an extra bowl of rice toward an empty seat, pauses, then draws it back.
+Sound: Rice cooker's warming hum; a door closes in the corridor; no music.
+Opening: Two people sit opposite each other; the empty seat is frame right.
+Closing: The mother lowers her eyes to eat; the child looks at the empty bowl.
+Continuity: Wardrobe, table direction, right-side window light, and the three differently colored bowls match the references.
+```
+
+The example demonstrates information density only. Do not reuse its plot or composition.

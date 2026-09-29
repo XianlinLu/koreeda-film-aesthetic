@@ -1,108 +1,108 @@
 ---
 name: koreeda-film-aesthetic
-description: 面向 Lumina 画布 Agent 的人文家庭短剧创作 Skill，把一句话故事、梗概或视听参考发展为脚本、人物与场景锚点、分镜、图像/视频提示词、声音方案和画布编排。用户提到是枝裕和、家庭生活流、克制表演、儿童视角、日常观察、记忆与失去、自然光电影感，或希望把参考视频转译成含蓄的人情短片时使用。
+description: Creates restrained, human-centered family short dramas in Lumina Canvas from a premise, outline, or audiovisual reference. Use when users mention Kore-eda, 是枝裕和, quiet family drama, everyday observation, child-centered storytelling, memory and loss, natural-light cinema, or an understated emotional short film.
 author: luxianlin.nezu
 license: MIT
 ---
 
-# 人文家庭电影感短剧
+# Humanist Family Short Drama
 
-## 核心原则
+## Core principle
 
-把戏剧性藏在日常动作、空间距离、环境声与省略里。若用户以在世导演作为参照，只提取高层电影语言；不要在下游图像或视频提示词中写导演姓名，也不要复刻具体作品的角色、对白、情节或标志性镜头。
+Place dramatic weight inside ordinary actions, spatial distance, ambient sound, and omission. When a user names a living filmmaker, treat the name as an aesthetic signal and translate it into high-level cinematic traits. Do not place the filmmaker's name in downstream image or video prompts, and do not reproduce characters, dialogue, plots, music, or signature shots from an existing work.
 
-创作前阅读 [美学转译](references/aesthetic.md)。用户提供视频或希望采用碎片化回忆时，再阅读 [参考视频转译](references/reference-video.md)。生成提示词时读取 [提示词结构](references/prompt-patterns.md)。
+Read [Aesthetic Translation](references/aesthetic.md) before writing. If the user supplies a video or requests fragmented memories, also read [Reference Video Translation](references/reference-video.md). Read [Prompt Patterns](references/prompt-patterns.md) when producing generation prompts.
 
-## 默认规格
+## Default specifications
 
-信息不足时直接采用以下设定，并在结果顶部说明假设：
+When details are missing, state and use these assumptions:
 
-- 时长 60–90 秒，16:9；用户明确说竖屏或短视频平台时改为 9:16。
-- 2–3 个主要人物，1–2 个日常场景，8–12 个镜头。
-- 单镜 5 或 10 秒，固定镜头和中景优先。
-- 当代、自然光、写实真人、低饱和中性色、自然肤色。
-- 普通话短对白；若动作与环境声足以表达，允许无对白。
+- Duration: 60–90 seconds; aspect ratio: 16:9. Use 9:16 only when requested or clearly intended for a vertical platform.
+- Cast: 2–3 principal characters; locations: 1–2 ordinary spaces; shots: 8–12.
+- Shot duration: usually 5 or 10 seconds; favor locked-off medium and wide shots.
+- Setting: contemporary; natural light; live-action realism; muted neutral colors; natural skin tones.
+- Dialogue: brief and conversational. Use no dialogue when behavior and sound can carry the scene.
 
-只有缺失信息会改变人物关系、结局方向或核心构图时，才一次集中提问；其余细节自主补全。
+Ask one consolidated question only when missing information would change the relationship, ending, or essential composition. Resolve other details independently.
 
-## 选择叙事模式
+## Choose a narrative mode
 
-### 观察式家庭短剧（默认）
+### Observational family drama — default
 
-用一个具体家务或共同任务承载关系变化。结构为：日常进入 → 细小错位 → 不完整交流 → 行为发生轻微改变 → 物件或空间回响。节奏舒缓，空镜承担呼吸而非装饰。
+Use one concrete household task or shared errand to carry the relationship change. Shape the story as: ordinary entry → small mismatch → incomplete exchange → slight behavioral change → object or space echoes the opening. Keep a patient rhythm; use empty shots as breathing room rather than decoration.
 
-### 记忆诗篇（条件触发）
+### Memory poem — conditional
 
-仅在用户明确要求记忆蒙太奇、无对白诗意短片，或提供与 `Kenopsia` 类似的参考视频时启用。以一个日常现实场景为锚，穿插较短记忆碎片；最多使用一个原创超现实意象，并在结尾回到静止长镜头。不可复制燃烧钢琴、指尖蝴蝶、水火同室等参考视频的具体组合。
+Use only when the user asks for a memory montage, a dialogue-free poetic film, or supplies a reference similar to `Kenopsia`. Anchor the film in one present-day activity, insert short memory fragments, allow no more than one original surreal image, and return to a still long take at the end. Do not reuse the reference video's burning piano, fingertip butterfly, water-and-fire room, or other exact image combinations.
 
-## 工作流
+## Workflow
 
-### 1. 建立创作简报
+### 1. Build the creative brief
 
-先在画布创建“创作简报”文本节点，写明：
+Create a “Creative Brief” text node containing:
 
-- 一句话梗概与目标时长
-- 人物关系、各自欲望、未说出口的需要
-- 表层事件与唯一关系转折
-- 反复出现的生活物件或声音
-- 叙事模式、画幅、时段、天气、对白语言
-- 结尾留下的情绪，不写主题宣言
+- Logline and target duration
+- Character relationship, each person's want, and the unspoken need
+- Surface event and single relationship turn
+- Recurring household object or sound
+- Narrative mode, aspect ratio, time of day, weather, and dialogue language
+- The feeling left by the ending, without a theme statement
 
-冲突来自错位、迟疑、习惯或隐瞒，不依赖单一反派、突发疾病、巧合、强行反转或全员和解。
+Let conflict come from mismatched needs, hesitation, habit, or concealment. Avoid a one-note villain, illness spectacle, coincidence, forced twist, or universal reconciliation.
 
-### 2. 写可见可听的脚本
+### 2. Write a visible and audible script
 
-用做饭、收拾、等车、递东西、关窗、换鞋等动作推进。对白使用短句、停顿、抢话、答非所问和话题转移；不让人物解释观众已经能看懂的感受。
+Advance the scene through cooking, sorting, waiting, handing over an object, closing a window, changing shoes, or another playable task. Keep dialogue short and indirect; use pauses, interruptions, repeated questions, and topic changes. Do not verbalize emotions already legible in the image.
 
-每场写明地点与时间、在场人物、动作、对白、画内/画外声音和关系变化。结尾用动作、物件、光线或空间变化回响开头，不用总结式台词。
+For each scene, specify location and time, present characters, action, dialogue, on-screen and off-screen sound, and the relationship shift. End on an action, object, light change, or spatial change that echoes the opening.
 
-### 3. 锁定连续性
+### 3. Lock continuity
 
-在生成任何成片镜头前，创建三个基准节点：
+Before generating final shots, create three reference nodes:
 
-- 人物锚点：年龄感、发型、面部特征、体态、服装层次、主色、随身物。
-- 场景锚点：平面关系、门窗方向、家具位置、时间、天气、主光方向、生活痕迹。
-- 影像锚点：画幅、焦段倾向、机位高度、色彩、颗粒、运动边界。
+- Character anchor: apparent age, face, hair, body language, clothing layers, palette, and carried object.
+- Location anchor: floor relationships, doors and windows, furniture, time, weather, key-light direction, and lived-in details.
+- Visual anchor: aspect ratio, lens tendency, camera height, color, grain, and movement limits.
 
-先生成角色与场景基准图，再生成 2–3 张跨段落关键帧。关键帧一致后才逐镜生成。完整锚点必须重复写入每个相关提示词，不能写“同上”。
+Generate character and location reference images first, then 2–3 keyframes from different story sections. Continue only when those keyframes agree. Repeat complete anchors in every relevant prompt; never use “same as above.”
 
-### 4. 拆分镜头
+### 4. Design the shots
 
-每个分镜条目包含：镜号、时长、段落功能、景别、机位与运动、人物动作、对白/声音、起始画面、结束画面、连续性锚点、图像提示词、视频提示词。
+For every shot, provide: number, duration, dramatic function, scale, camera position and motion, character action, dialogue or sound, opening frame, closing frame, continuity anchors, image prompt, and video prompt.
 
-观察式模式优先中景、全景、门框/窗框构图和人物视线高度；每 3–4 镜至少有一个空间或静物呼吸镜头。记忆诗篇模式可以插入 1.5–3 秒碎片，但必须由动作、声音或物件关联，且至少保留两个 5–10 秒的现实锚点镜头。
+In Observation Mode, favor medium/wide framing, eye-level viewpoints, and compositions through doors or windows. Include at least one spatial or still-life breathing shot every 3–4 shots. In Memory-Poem Mode, fragments may run 1.5–3 seconds, but each must connect through action, sound, or object, and the film must retain at least two 5–10 second present-day anchor shots.
 
-### 5. 生成图像与视频
+### 5. Generate images and video
 
-每镜只设计一个可完成的主要动作。默认固定机位；人物移动或信息揭示确有需要时，才用缓慢平移、轻微跟随或极慢推进。避免无动机环绕、无人机俯冲、快速变焦、连续拉焦和全程浅景深。
+Give each shot one achievable primary action. Default to a locked camera. Use a slow pan, gentle follow, or very slow push only when movement reveals information. Avoid unmotivated orbits, drone dives, rapid zooms, constant rack focus, and shallow focus in every shot.
 
-先生成单个可信版本。关键情绪镜最多给两个构图备选；人物或场景连续两次失败时，停止批量生成，回到基准图简化锚点，再只重做受影响镜头。
+Generate one credible version first and no more than two composition options for a key emotional shot. If character or location continuity fails twice, stop batch generation, simplify the reference anchors, and regenerate only the affected shots.
 
-### 6. 设计声音
+### 6. Design sound
 
-声音优先级：对白清晰度 > 环境底声 > 动作细节声 > 音乐。先建立冰箱低鸣、碗筷、雨棚、远处交通、走廊脚步、蝉鸣等空间层，再判断是否需要音乐。音乐保持稀疏，不能代替人物表演。
+Prioritize dialogue clarity, then ambient bed, action detail, and music. Establish space with refrigerator hum, dishes, rain on an awning, distant traffic, corridor footsteps, insects, or comparable sounds before adding music. Keep music sparse and unable to substitute for performance.
 
-无对白时，为每个段落指定一种可辨识的环境声，并用一次声音延续或突然抽离完成情绪转折。
+For a dialogue-free film, assign one recognizable ambient sound to each section and use one sound bridge or deliberate withdrawal of sound for the emotional turn.
 
-### 7. 整理 Lumina 画布
+### 7. Organize the Lumina canvas
 
-按 [画布编排](references/canvas-workflow.md) 从左到右分组：创作简报 → 人物/场景基准 → 脚本 → 分镜 → 关键帧 → 逐镜视频 → 声音 → 成片顺序。每个成片镜头必须能回溯到分镜和参考资产。
+Follow [Canvas Workflow](references/canvas-workflow.md) from left to right: brief → character/location anchors → script → storyboard → keyframes → shot videos → sound → final sequence. Every final video shot must trace back to one storyboard entry and its visual references.
 
-完成前执行 [质量检查](references/quality-check.md)。故事逻辑有误时先改脚本和分镜，再重做下游；连续性有误时只重做受影响镜头。
+Run [Quality Check](references/quality-check.md) before delivery. Fix story logic in the script and storyboard before regenerating downstream assets; fix continuity errors only in the affected shots.
 
-## 交付格式
+## Deliverables
 
-最终输出依次包含：
+Return, in order:
 
-1. 创作假设与一句话梗概
-2. 人物关系和情感暗线
-3. 场景与影像锚点
-4. 可拍摄短剧脚本
-5. 逐镜分镜表及完整提示词
-6. 声音与剪辑方案
-7. 画布节点与连线说明
-8. 简短自检结论
+1. Assumptions and logline
+2. Character relationship and emotional subtext
+3. Location and visual anchors
+4. Shootable short-drama script
+5. Shot list with complete image and video prompts
+6. Sound and editing plan
+7. Canvas node and connection plan
+8. Brief quality-check result
 
-## 导入安全
+## Import safety
 
-发布或交付 Skill 仓库前，只保留 `.md`、`.txt`、`.json`、`.yaml`、`.yml` 文件，扩展名必须小写。普通文件与目录名只使用英文字母、数字、下划线和连字符，单个名称不超过 64 个字符。许可证必须命名为 `license.md`，不能使用无扩展名的 `LICENSE`。不要把参考图片、视频、压缩包或生成结果放入 Skill 仓库；它们作为运行时素材保留在 Lumina 画布中。
+Before publishing or handing off the Skill repository, retain only `.md`, `.txt`, `.json`, `.yaml`, and `.yml` files, with lowercase extensions. Regular file and folder names must use only letters, numbers, underscores, and hyphens, with each name no longer than 64 characters. Name the license `license.md`, never extensionless `LICENSE`. Keep reference images, videos, archives, and generated outputs on the Lumina canvas rather than in the Skill repository.

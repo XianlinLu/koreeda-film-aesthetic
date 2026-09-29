@@ -1,31 +1,31 @@
-# Lumina 画布编排
+# Lumina Canvas Workflow
 
-## 从左到右的八列
+## Eight columns from left to right
 
-1. 创作简报：需求、假设、模式、时长与画幅。
-2. 人物/场景基准：角色图、场景图、连续性锚点文本。
-3. 脚本：按场景拆分的动作、对白、声音与关系变化。
-4. 分镜：一镜一条，包含起点、动作、终点与时长。
-5. 关键帧：开场、转折、结尾的跨段落视觉基准。
-6. 逐镜视频：严格按镜号命名并连接对应分镜与参考图。
-7. 声音：对白、环境底声、动作声、音乐四层。
-8. 成片顺序：只放最终采用镜头，按播放顺序排列。
+1. Creative brief: request, assumptions, mode, duration, and aspect ratio.
+2. Character/location anchors: reference images and continuity notes.
+3. Script: scene actions, dialogue, sound, and relationship changes.
+4. Storyboard: one entry per shot with start, action, end, and duration.
+5. Keyframes: opening, turning point, and ending visual references.
+6. Shot videos: numbered consistently and connected to their storyboard and reference images.
+7. Sound: dialogue, ambient bed, action detail, and music layers.
+8. Final sequence: accepted shots only, arranged in playback order.
 
-## 命名规则
+## Node naming
 
-节点使用 `类型_序号_短描述`，例如 `shot_04_empty_bowl`、`video_04_empty_bowl`。序号固定两位，描述使用英文字母、数字与下划线；不要在节点名中使用空格或特殊字符。
+Use `type_number_short-description`, such as `shot_04_empty-bowl` and `video_04_empty-bowl`. Keep a two-digit shot number and use only letters, numbers, underscores, and hyphens. Avoid spaces and special characters.
 
-## 连线规则
+## Connections
 
-- 人物基准与场景基准连接所有相关关键帧和视频节点。
-- 每个视频节点至少连接一个分镜节点和一个视觉参考节点。
-- 声音节点连接对应镜头或段落，不创建无法定位时间点的“全片氛围”节点。
-- 成片顺序只连接最终版本；备选放在旁侧并标注 `alt`，避免误入导出。
+- Connect character and location anchors to every relevant keyframe and video node.
+- Connect each video node to at least one storyboard entry and one visual reference.
+- Connect each sound node to a defined shot or section; avoid undated “whole-film mood” nodes.
+- Connect only accepted versions to the final sequence. Place alternatives to the side and label them `alt`.
 
-## 失败分支
+## Recovery paths
 
-- 人物漂移：断开失败视频，只回到人物基准与该镜关键帧。
-- 空间跳变：重新检查场景基准的门窗方向、主光与家具位置。
-- 动作不完整：把一镜多动作拆为两镜，或把时长改为 10 秒。
-- 节奏过快：优先延长现实锚点镜头，不用复制帧或慢动作补时。
-- 情绪过满：先移除音乐，再删解释性对白，最后减少特写。
+- Character drift: disconnect the failed video and return only to the character anchor and that shot's keyframe.
+- Spatial jump: recheck door/window direction, key light, and furniture in the location anchor.
+- Incomplete action: split multiple actions into two shots or extend the shot to 10 seconds.
+- Excessive speed: lengthen present-day anchor shots instead of duplicating frames or using slow motion.
+- Overstated emotion: remove music first, then explanatory dialogue, then unnecessary close-ups.

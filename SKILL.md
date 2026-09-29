@@ -1,6 +1,6 @@
 ---
 name: koreeda-film-aesthetic
-description: Creates restrained, human-centered family short dramas in Lumina Canvas with adaptive language, continuity anchors, sequential full-video extension, original sound, and verified delivery. Use when users mention Kore-eda, 是枝裕和, quiet family drama, everyday observation, child-centered storytelling, memory and loss, natural-light cinema, or an understated emotional short film.
+description: Creates restrained, human-centered family short dramas in Lumina Canvas with adaptive language, one-node-per-character assets, confirmation-gated optional character audio, sequential full-video extension, original sound, and verified delivery. Use when users mention Kore-eda, 是枝裕和, quiet family drama, everyday observation, child-centered storytelling, memory and loss, natural-light cinema, or an understated emotional short film.
 author: luxianlin.nezu
 license: MIT
 ---
@@ -11,7 +11,7 @@ license: MIT
 
 Place dramatic weight inside ordinary actions, spatial distance, ambient sound, and omission. For moving-image work, use the supplied `Kenopsia` reference as the default style benchmark: associative memory montage, intense backlight, analog film texture, restrained slow motion, rhythmic hard cuts, and a still spatial ending. Match its visual grammar and emotional cadence without reproducing its people, title, logos, music, or exact image combinations.
 
-Read [Aesthetic Translation](references/aesthetic.md) before writing. Read [Reference Video Translation](references/reference-video.md) before every moving-image task, and treat its style-lock rules as defaults unless the user explicitly requests a different visual treatment. Read [Prompt Patterns](references/prompt-patterns.md) when producing generation prompts.
+Read [Aesthetic Translation](references/aesthetic.md) before writing. Read [Reference Video Translation](references/reference-video.md) before every moving-image task, and treat its style-lock rules as defaults unless the user explicitly requests a different visual treatment. Read [Character Asset Workflow](references/character-asset-workflow.md) before generating any character asset or character audio. Read [Prompt Patterns](references/prompt-patterns.md) when producing generation prompts.
 
 ## Adaptive language
 
@@ -66,13 +66,17 @@ For each scene, specify location and time, present characters, action, dialogue,
 
 ### 3. Lock continuity
 
-Before generating final shots, create three reference nodes:
+Before generating final shots, create separate reference nodes:
 
-- Character anchor: apparent age, face, hair, body language, clothing layers, palette, and carried object.
+- One character asset node per named character: apparent age, face, hair, body language, clothing layers, palette, and carried object. Each character asset image may show multiple views of the same character, but it must contain exactly one character identity. Never place two or more characters in one character asset image or node.
 - Location anchor: floor relationships, doors and windows, furniture, time, weather, key-light direction, and lived-in details.
 - Visual anchor: aspect ratio, lens tendency, camera height, color, grain, and movement limits.
 
-Generate character and location reference images first, then 2–3 keyframes from different story sections. Continue only when those keyframes agree. Repeat complete anchors in every relevant prompt; never use “same as above.”
+Generate each character asset independently, connect its source description to its dedicated generation node, verify the returned image is attached to that node, and then stop for user confirmation. Keep approved assets unchanged and regenerate only rejected characters. Do not generate character-dependent audio or video from an unconfirmed asset.
+
+After a character asset is approved, generate that character's voice or audio only when the user requests it. Connect the approved single-character asset node to that character's dedicated audio-generation node before running the action, and verify the edge and output. If the user does not request audio for that character, create no character-audio node and continue without it. See [Character Asset Workflow](references/character-asset-workflow.md) for the confirmation and dependency rules.
+
+After required confirmations, generate location reference images and 2–3 keyframes from different story sections. Continue only when those keyframes agree. Repeat complete anchors in every relevant prompt; never use “same as above.”
 
 ### 4. Design the shots
 
@@ -110,13 +114,15 @@ Return the following semantic sections in order, translating every section title
 
 1. Assumptions and logline
 2. Character relationship and emotional subtext
-3. Location and visual anchors
-4. Shootable short-drama script
-5. Shot list with complete image and video prompts
-6. Continuous video extension plan and verified lineage
-7. Sound and editing plan
-8. Canvas node and connection plan
-9. Brief quality-check result
+3. Separate character asset nodes and confirmation status
+4. Optional per-character audio nodes and verified connections
+5. Location and visual anchors
+6. Shootable short-drama script
+7. Shot list with complete image and video prompts
+8. Continuous video extension plan and verified lineage
+9. Sound and editing plan
+10. Canvas node and connection plan
+11. Brief quality-check result
 
 Before delivery, run a language gate: compare every visible title, heading, paragraph, dialogue line, subtitle, node label, and final note with `interaction_language` or `story_language` as applicable. If the user wrote in Chinese and did not explicitly request English creative output, replace unintended English titles, labels, and prose with natural Simplified Chinese before responding.
 

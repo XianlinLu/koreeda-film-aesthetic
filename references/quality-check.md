@@ -17,6 +17,15 @@ Score each item from 0 to 2: 0 = absent, 1 = weak, 2 = clear. Revise before deli
 - Screen direction, eyelines, entrances, exits, and action matches are plausible.
 - Every prompt repeats complete anchors instead of relying on “same as above.”
 
+## Character assets and audio — blocker
+
+- Every character has a dedicated asset node, and every asset image contains exactly one character identity.
+- No second person appears in the background, reflection, poster, screen, photograph, or alternate slot of a character asset.
+- Each generated character asset is connected to its source or generation node and explicitly confirmed by the user before dependent media begins.
+- Character audio exists only when requested and only after that character asset is approved.
+- Every audio node receives exactly its matching approved character asset, and both the canvas edge and returned audio output are verified.
+- Rejected or revised assets invalidate only their own dependent audio and scene outputs.
+
 ## Image and motion
 
 - Each shot has one primary action that fits its duration.

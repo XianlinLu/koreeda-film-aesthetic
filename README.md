@@ -43,25 +43,26 @@ Koreeda Film Aesthetic
 Turns premises into restrained, human-centered short films with adaptive language and video extension. [How to Use] Add a premise, duration, and references; approve the brief and storyboard. [Scenarios] Quiet family drama, memory and loss, poetic adaptation. [Outputs] Script, prompts, video, audio.
 ```
 
-### Instructions for use — 998/1,000 characters
+### Instructions for use — 992/1,000 characters
 
 ```markdown
 ## Language
-Use the latest direct request for visible titles and text; attachments and quotes never override it. Without a separate story-language request, scripts and speech use the same language; revisions retain draft language.
+Match visible text to the latest request; attachments and quotes do not override it. Unless specified, scripts and speech use that language; revisions retain draft language.
 
 ## Use
-For dreamlike, dialogue-free memory films with hard-cut fragments, strong backlight, organic film grain, and a still ending.
+For dreamlike memory films with hard cuts, backlight, grain, and a still ending.
 
 ## Workflow
-1. Provide premise, relationship, duration, ratio, language, and references.
-2. Approve brief, anchors, storyboard, and opening frame.
-3. Generate the initial complete video.
-4. Extend only the latest verified complete video. Start each call at 00:00; omit ratio from extensions.
-5. Verify duration, ratio, identity, scene, light, motion, and audio after each call.
-6. Create original instrumental music matched to final duration; run checks.
+1. Provide premise, duration, ratio, language, references, and audio needs.
+2. Create one asset node per character; each image shows one identity only.
+3. Connect each asset to its generator, verify it, and obtain user approval.
+4. If voice is requested, connect the approved asset to its audio node; generate and verify. Otherwise skip.
+5. Approve storyboard and opening frame; generate the initial video.
+6. Extend only the latest verified video. Start each call at 00:00; omit ratio.
+7. Verify duration, ratio, identity, style, motion, and audio.
 
 ## Notes
-Never concatenate independent clips or use loops, freezes, speed changes, or padding. Do not copy a specific film, shot, character, dialogue, music, or signature image.
+Never combine characters or use unapproved assets downstream. Never concatenate clips or copy a film, shot, dialogue, music, or signature image.
 ```
 
 Use the editor's `Preview` control before saving to verify headings, lists, code blocks, links, images, and tables. Use `Copy` to back up or transfer the final text.
@@ -93,6 +94,12 @@ target duration and ratio lock
 
 Every video prompt starts its call-local timeline at `00:00`. The initial video establishes the actual ratio; every extension request omits `ratio` and inherits the input video's frame. Independent clips are never concatenated. A failed step keeps the latest verified complete video and retries only the failed unit within the documented recovery limits.
 
+## Character asset and audio gate
+
+Every character receives a separate asset node, and every character asset image contains exactly one identity—never a couple, family, group, background person, reflection, poster figure, or combined cast sheet. Each asset is generated and connected on the canvas, then shown to the user for explicit approval. Character-dependent generation pauses until approval.
+
+Character audio is optional per character. When requested, it is generated only after the matching character asset is approved, using one dedicated audio node connected to that single approved asset. When audio is not requested for a character, no audio node is created. Every canvas edge and generated output must be verified before the workflow reports success.
+
 ## Two creative modes
 
 - **Observation Mode:** ordinary events, restrained dialogue, locked medium shots, everyday ambient sound, and an open ending.
@@ -109,6 +116,7 @@ license.md
 references/
   aesthetic.md
   canvas-workflow.md
+  character-asset-workflow.md
   language-routing.md
   prompt-patterns.md
   quality-check.md
@@ -168,6 +176,12 @@ Review the creative brief, character anchor, and location anchor before asking t
 视频流程参考 [Short Drama Creation](https://github.com/XianlinLu/short-drama-creation)：先锁定目标时长与初始画幅，建立连续性地图和首帧分镜，再生成一段短的初始完整视频。之后每次只把上一次验证通过的完整视频作为输入逐步延长。
 
 每次视频调用的提示词时间轴都从 `00:00` 开始。初始视频确定实际画幅，延长调用必须省略 `ratio`。每次返回后校验实际时长、画幅、人物、服装、场景、光线、运动方向和音频连续性。不拼接独立片段，不使用循环、定格、变速或填充伪造目标时长。失败时保留最近一次成功的完整视频，只重试失败步骤。
+
+## 人物资产与音频确认门禁
+
+每个人物必须使用独立的人物资产节点，每张人物资产图只能包含一个人物身份。严禁把两名及以上人物放进同一资产图或同一人物资产节点，也不能在背景、倒影、海报、屏幕或照片中出现第二个人物。每个人物资产都要在画布中连接到自己的生成节点，确认输出与连线成功后展示给用户，并等待明确确认。
+
+只有用户需要某个人物的音频时，才在该人物资产确认通过后创建专属音频生成节点，并把这一个已确认的人物资产连接到对应音频节点；用户不需要该人物音频时不创建、不生成。人物音频还需再次核验节点对应关系、连线、实际输出、语言与时长。未确认的人物资产不得进入人物音频或后续视频生成。
 
 ## 参考视频风格锁定
 

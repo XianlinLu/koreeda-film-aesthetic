@@ -23,8 +23,9 @@ The repository follows every requirement shown in the import warning:
 - File and folder names may contain only uppercase and lowercase letters, numbers, underscores, and hyphens.
 - Each file or folder name must be no longer than 64 characters.
 - The extensionless `LICENSE` filename is not supported, so this repository uses `license.md`.
+- The local Aime packaging file `.skillignore` is intentionally not tracked on the GitHub branch imported by Lumina.
 
-The warning text addressed by this repository is: `LICENSE — Files only support .md, .txt, .json, .yaml, .yml formats`.
+The warning texts addressed by this repository are `LICENSE — Files only support .md, .txt, .json, .yaml, .yml formats` and `.skillignore — Files only support .md, .txt, .json, .yaml, .yml formats`.
 
 ## Lumina form copy
 
@@ -42,18 +43,18 @@ Koreeda Film Aesthetic
 Turns premises into restrained, human-centered short films with adaptive language and video extension. [How to Use] Add a premise, duration, and references; approve the brief and storyboard. [Scenarios] Quiet family drama, memory and loss, poetic adaptation. [Outputs] Script, prompts, video, audio.
 ```
 
-### Instructions for use — 999/1,000 characters
+### Instructions for use — 998/1,000 characters
 
 ```markdown
 ## Language
-Follow the latest direct request for visible text; attachments and quoted or generated material do not override it. Explicit story-language requests control scripts and speech; revisions retain the draft language.
+Use the latest direct request for visible titles and text; attachments and quotes never override it. Without a separate story-language request, scripts and speech use the same language; revisions retain draft language.
 
 ## Use
-For quiet family drama, everyday life, memory and loss, natural-light cinema, or poetic shorts.
+For dreamlike, dialogue-free memory films with hard-cut fragments, strong backlight, organic film grain, and a still ending.
 
 ## Workflow
-1. Provide premise, relationship, target duration, ratio, story language, and references.
-2. Approve brief, continuity anchors, script, storyboard, and opening keyframe.
+1. Provide premise, relationship, duration, ratio, language, and references.
+2. Approve brief, anchors, storyboard, and opening frame.
 3. Generate the initial complete video.
 4. Extend only the latest verified complete video. Start each call at 00:00; omit ratio from extensions.
 5. Verify duration, ratio, identity, scene, light, motion, and audio after each call.
@@ -74,6 +75,7 @@ The form limits shown by Lumina are: Skill name `30`, One sentence introduction 
 - An explicit story-language request controls scripts, dialogue, narration, subtitles, and speech.
 - Revisions preserve the source draft's language unless the user requests a change.
 - In mixed-language requests, an explicit language instruction wins; otherwise the newest substantive request determines the language, then the established conversation language, then English.
+- Every generated film title, logline, synopsis, section heading, storyboard label, and body paragraph is checked before delivery. A Chinese request produces Chinese creative output unless English is explicitly requested.
 
 ## Continuous video workflow
 
@@ -114,7 +116,11 @@ references/
   video-generation-workflow.md
 ```
 
-The hidden `.skillignore` file is used only for Skill packaging and contains no runtime media.
+A local `.skillignore` is retained for Aime packaging but intentionally excluded from the GitHub branch imported by Lumina, because Lumina rejects that dotfile as an unsupported document.
+
+## Reference-video style lock
+
+Generated videos default to the supplied `Kenopsia` reference's transferable visual grammar: 16:9 dreamlike memory montage, 2–3 second fragments between longer spatial anchors, intense backlight and flare, gold highlights against cyan-green shadows, 35 mm grain and halation, selective shallow focus, rhythmic hard cuts, restrained slow motion, original lo-fi sound, and a static ending with subtle environmental movement. The Skill creates new people, places, actions, music, and one original paradoxical image rather than copying the reference's exact shots, title, logos, or signature object combinations.
 
 ## Example requests
 
@@ -136,7 +142,7 @@ Review the creative brief, character anchor, and location anchor before asking t
 
 在 Lumina 的 Skill 导入界面粘贴本仓库地址，入口文件为 `SKILL.md`。
 
-仓库中的普通文件均使用 Lumina 支持的小写文本扩展名。许可证命名为 `license.md`，不会触发无扩展名 `LICENSE` 的导入报错。参考图片、视频、压缩包和生成结果不会放入仓库。
+仓库中的普通文件均使用 Lumina 支持的小写文本扩展名。许可证命名为 `license.md`，不会触发无扩展名 `LICENSE` 的导入报错。本地 Aime 打包所需的 `.skillignore` 不再发布到供 Lumina 导入的 GitHub 分支，从而避免本次截图中的不支持格式与点号文件名报错。参考图片、视频、压缩包和生成结果不会放入仓库。
 
 ## Lumina 表单英文文案
 
@@ -155,12 +161,17 @@ Review the creative brief, character anchor, and location anchor before asking t
 - 用户明确指定故事语言时，以该语言生成脚本、对白、旁白、字幕与语音。
 - 修改或续写现有草稿时，默认保留原稿语言，除非用户要求更换。
 - 混合语言请求优先服从明确的语言指令；否则跟随最新实质请求所用语言，再沿用对话语言，仍无法判断时使用英文。
+- 交付前会检查片名、梗概、章节标题、分镜标签与正文；中文请求在没有明确英文指令时必须输出自然的简体中文内容。
 
 ## 连续视频生成流程
 
 视频流程参考 [Short Drama Creation](https://github.com/XianlinLu/short-drama-creation)：先锁定目标时长与初始画幅，建立连续性地图和首帧分镜，再生成一段短的初始完整视频。之后每次只把上一次验证通过的完整视频作为输入逐步延长。
 
 每次视频调用的提示词时间轴都从 `00:00` 开始。初始视频确定实际画幅，延长调用必须省略 `ratio`。每次返回后校验实际时长、画幅、人物、服装、场景、光线、运动方向和音频连续性。不拼接独立片段，不使用循环、定格、变速或填充伪造目标时长。失败时保留最近一次成功的完整视频，只重试失败步骤。
+
+## 参考视频风格锁定
+
+生成视频默认完整采用所给 `Kenopsia` 参考片可迁移的视听语法：16:9 梦境式记忆蒙太奇，以 2–3 秒碎片穿插较长空间锚点；强逆光与炫光、金色高光和青绿色阴影、35 mm 胶片颗粒与光晕、选择性浅景深；硬切跟随音乐节拍，动作带克制的慢动作感；使用原创低保真音乐与环境声，并以含细微环境运动的静止长镜头收尾。人物、地点、动作、音乐和矛盾意象保持原创，不复制参考片的具体镜头、片名、Logo 或标志性物件组合。
 
 ## 两种创作模式
 

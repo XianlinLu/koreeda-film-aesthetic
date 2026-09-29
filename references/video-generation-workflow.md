@@ -26,6 +26,7 @@ Plan one continuous film and record:
 - opening action and continuation-ready end state for each generation call;
 - prop positions, screen direction, camera behavior, and emotional progression;
 - dialogue, ambience, action sound, and music curve.
+- reference-style invariants: intense backlight, gold-to-cyan palette, organic grain, halation, focus pattern, rhythmic hard cuts, and the final locked spatial image.
 
 Global film time belongs only in planning metadata. Prompts use call-local time.
 
@@ -41,6 +42,7 @@ After the action returns, verify:
 - actual duration matches the requested initial duration within tolerance;
 - actual width and height establish the locked ratio;
 - identity, wardrobe, scene layout, light, motion, and audio remain coherent;
+- the `Kenopsia` style invariants are visibly present rather than added as a final filter;
 - the final frame is suitable for continuation.
 
 Use the actual returned ratio only for validation and delivery metadata.
@@ -52,7 +54,7 @@ For each extension:
 1. Submit the latest verified complete video, never an earlier version or independent clip.
 2. Omit the `ratio` field entirely. Do not send the locked ratio, `auto`, `null`, or an empty value.
 3. Describe only the next story beat and use a local timeline beginning at `00:00`.
-4. Preserve identity, wardrobe, scene geometry, lighting, motion direction, props, camera logic, and audio continuity.
+4. Preserve identity, wardrobe, scene geometry, backlight direction, gold-to-cyan palette, grain, halation, focus behavior, motion direction, props, camera logic, and audio continuity.
 5. Wait for the returned full video before starting the next extension.
 6. Verify that the artifact is complete, its duration increased by the expected amount, its ratio matches the input, and continuity remains acceptable.
 7. Promote it to the new checkpoint only after verification.
@@ -84,6 +86,6 @@ Retry only the failed initial, extension, music, speech, effect, or embedding st
 
 Create a fully original instrumental cue matched to the verified final duration when a compatible action is connected. Dialogue clarity comes first, followed by ambience, action detail, and music. Embed audio only through a route that preserves the single continuous video; otherwise deliver it separately with synchronization guidance.
 
-Final acceptance requires one traceable lineage from the initial video through every verified extension, a verified target duration and ratio, coherent character and environment continuity, zero-based timelines for all video calls, and no independent-clip concatenation.
+Final acceptance requires one traceable lineage from the initial video through every verified extension, a verified target duration and ratio, coherent character and environment continuity, sustained reference-style invariants, zero-based timelines for all video calls, and no independent-clip concatenation.
 
 This workflow is adapted from the continuous-generation principles documented in [Short Drama Creation](https://github.com/XianlinLu/short-drama-creation), while preserving this Skill's restrained family-drama aesthetic and originality safeguards.

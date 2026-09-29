@@ -1,6 +1,6 @@
 # Final Quality Check
 
-Score each item from 0 to 2: 0 = absent, 1 = weak, 2 = clear. Revise before delivery when the total is below 20/26 or any blocker scores 0.
+Score each item from 0 to 2: 0 = absent, 1 = weak, 2 = clear. Revise before delivery when the average is below 1.5 or any blocker scores 0.
 
 ## Story
 
@@ -24,6 +24,14 @@ Score each item from 0 to 2: 0 = absent, 1 = weak, 2 = clear. Revise before deli
 - Every close-up adds information rather than decoration.
 - Medium shots, wide shots, and breathing shots preserve a lived-in space.
 - No face drift, malformed bodies, invented objects, text, or watermarks remain.
+
+## Reference-style fidelity — blocker
+
+- Intense backlight, visible beams or controlled flare, and a warm-gold versus cool-cyan shadow relationship are present.
+- Organic film grain, halation, slight edge softness, and restrained chromatic aberration survive across the full video.
+- Brief tactile fragments alternate with longer spatial anchors; hard cuts follow musical beats or turns.
+- Camera movement is limited to gentle handheld tracking, a very slow reveal, or a locked frame with internal motion.
+- The ending holds on a static wide or medium composition before fading to black, without copying the reference's exact objects or scene.
 
 ## Sound and rhythm
 

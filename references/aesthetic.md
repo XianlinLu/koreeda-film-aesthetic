@@ -2,7 +2,7 @@
 
 ## Goal
 
-Create gentle, restrained, human-centered contemporary family cinema. Focus on how people form, miss, or rediscover one another through shared life. Put dramatic weight in behavior, space, sound, and omission.
+Create restrained, human-centered cinema whose narrative feeling emerges through ordinary behavior while its moving-image treatment follows the `Kenopsia` reference profile in [Reference Video Translation](reference-video.md). Put dramatic weight in memory, space, sound, light, and omission.
 
 When a user names a living filmmaker, treat the name as an aesthetic signal rather than a generation instruction. Downstream prompts should contain only observable narrative, cinematography, performance, sound, and production-design traits.
 
@@ -26,25 +26,25 @@ When a user names a living filmmaker, treat the name as an aesthetic signal rath
 ## Camera and production design
 
 - Keep the camera near a seated or standing character's eye level.
-- Establish relationships through locked medium/wide shots and frames within doors or windows.
+- Establish relationships through locked medium/wide shots, centered anchors, deep corridors, and frames within doors or windows.
 - Let a character leave the frame while the camera remains with the room or object.
-- Use window light, overcast diffusion, and practical lamps while preserving exterior detail and natural skin tones.
-- Choose two or three dominant colors from wood, warm gray, worn white, muted green, and faded blue.
-- Use moderate depth of field so both people and their environment remain informative.
-- Preserve small imperfections without stacking vintage filters or artificial handheld shake.
+- Use intense window or sunset backlight, visible beams, controlled overexposure, and restrained flare while preserving natural skin tones.
+- Build the palette around warm gold or amber highlights against cyan-green, gray-blue, or deep teal shadows.
+- Use shallow depth for tactile memory fragments and deeper focus for architectural anchors and the final still shot.
+- Preserve small imperfections through organic 35 mm grain, soft halation, slight edge softness, and restrained chromatic aberration. Use gentle handheld movement only for passing memories.
 
 ## Rhythm and sound
 
-- Hold half a beat before an action and another beat after it ends.
+- Alternate 2–3 second memory fragments with 5–10 second spatial anchors, then hold the final static composition for 6–10 seconds.
 - Do not cover every line with shot/reverse-shot; stay on a listener, a hand, or an empty chair when useful.
-- Transition through matched action, continuing ambience, or a recurring object.
+- Favor rhythmic hard cuts on musical beats or turns; use a rare light-leak or overexposure transition only when it joins memory and present.
 - Let plumbing, cookware, fans, elevators, distant television, or rain prove that life continues beyond the frame.
-- Keep music sparse. The scene should still work when music is removed.
+- Use original slow lo-fi rhythm and nostalgic analog synth texture without copying the reference music. Include at least one ambience-only passage.
 
 ## Avoid
 
 - Do not use a filmmaker's name, “in the style of,” or “one-to-one remake” in generation prompts.
 - Do not reproduce a known cast configuration, famous scene, shot sequence, dialogue, plot, or score.
 - Avoid forced twists, illness spectacle, manipulative music, slow-motion embraces, universal reconciliation, and moralizing title cards.
-- Avoid excessive symmetry, spotless advertising sets, neon cyber palettes, and shallow focus in every shot.
+- Avoid repetitive symmetry, spotless advertising sets, neon cyber palettes, uniform shallow focus, and clean digital-commercial polish.
 - Prevent watermarks, captions, brand marks, malformed bodies, and illogical background people.

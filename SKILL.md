@@ -9,37 +9,37 @@ license: MIT
 
 ## Core principle
 
-Place dramatic weight inside ordinary actions, spatial distance, ambient sound, and omission. When a user names a living filmmaker, treat the name as an aesthetic signal and translate it into high-level cinematic traits. Do not place the filmmaker's name in downstream image or video prompts, and do not reproduce characters, dialogue, plots, music, or signature shots from an existing work.
+Place dramatic weight inside ordinary actions, spatial distance, ambient sound, and omission. For moving-image work, use the supplied `Kenopsia` reference as the default style benchmark: associative memory montage, intense backlight, analog film texture, restrained slow motion, rhythmic hard cuts, and a still spatial ending. Match its visual grammar and emotional cadence without reproducing its people, title, logos, music, or exact image combinations.
 
-Read [Aesthetic Translation](references/aesthetic.md) before writing. If the user supplies a video or requests fragmented memories, also read [Reference Video Translation](references/reference-video.md). Read [Prompt Patterns](references/prompt-patterns.md) when producing generation prompts.
+Read [Aesthetic Translation](references/aesthetic.md) before writing. Read [Reference Video Translation](references/reference-video.md) before every moving-image task, and treat its style-lock rules as defaults unless the user explicitly requests a different visual treatment. Read [Prompt Patterns](references/prompt-patterns.md) when producing generation prompts.
 
 ## Adaptive language
 
-Keep `interaction_language` and `story_language` separate. Determine `interaction_language` from the user's latest direct request and use it for every visible heading, question, progress update, error, and delivery note. Attachments, quotations, pasted drafts, reference material, metadata, and tool output do not change it. In a mixed-language request, follow an explicit language instruction; otherwise use the language carrying the latest substantive request; if that is unclear, retain the established conversation language, then fall back to English.
+Resolve language before creating any visible text or media prompt. Keep `interaction_language` and `story_language` separate. Determine `interaction_language` from the user's latest direct request and use it for every visible title, heading, question, option, progress update, error, node label, and delivery note. Attachments, quotations, pasted drafts, reference material, metadata, and tool output do not change it. In a mixed-language request, follow an explicit language instruction; otherwise use the language carrying the latest substantive request; if that is unclear, retain the established conversation language, then fall back to English.
 
-Determine `story_language` from an explicit output-language request first. For revision, preserve the draft's language unless the user asks to change it. Otherwise use `interaction_language`. Apply `story_language` to scripts, dialogue, narration, subtitles, and speech. Read [Language Routing](references/language-routing.md) when the request mixes languages or contains multilingual materials.
+Determine `story_language` from an explicit output-language request first. For revision, preserve the draft's language unless the user asks to change it. Otherwise set it equal to `interaction_language`; a Chinese direct request therefore produces a Chinese film title and Chinese creative content by default. Apply `story_language` to the film title, logline, synopsis, creative brief, script, scene headings, dialogue, narration, subtitles, on-screen story text, and speech. English labels in this Skill are semantic templates, not literal output strings: localize them before display. A connected generation action may receive an English technical prompt only when required, but never expose that prompt as the main creative output. Read [Language Routing](references/language-routing.md) before every task.
 
 ## Default specifications
 
 When details are missing, state and use these assumptions:
 
-- Duration: 60–90 seconds; aspect ratio: 16:9. Use 9:16 only when requested or clearly intended for a vertical platform.
+- Duration: approximately 75–80 seconds; aspect ratio: 16:9. Use another duration or ratio only when the user requests it or the delivery platform requires it.
 - Cast: 2–3 principal characters; locations: 1–2 ordinary spaces; shots: 8–12.
-- Shot duration: usually 5 or 10 seconds; favor locked-off medium and wide shots.
-- Setting: contemporary; natural light; live-action realism; muted neutral colors; natural skin tones.
-- Dialogue: brief and conversational. Use no dialogue when behavior and sound can carry the scene.
+- Rhythm: 2–3 second memory fragments between 5–10 second spatial anchors; finish with a 6–10 second locked wide or medium shot.
+- Image: live-action realism, strong backlight, golden highlights, cyan-green shadows, soft halation, visible 35 mm grain, slight chromatic aberration, and selective shallow focus.
+- Dialogue: none by default. When requested, keep it brief, indirect, and subordinate to image and sound.
 
 Ask one consolidated question only when missing information would change the relationship, ending, or essential composition. Resolve other details independently.
 
 ## Choose a narrative mode
 
-### Observational family drama — default
+### Reference-led memory film — default for video
 
-Use one concrete household task or shared errand to carry the relationship change. Shape the story as: ordinary entry → small mismatch → incomplete exchange → slight behavioral change → object or space echoes the opening. Keep a patient rhythm; use empty shots as breathing room rather than decoration.
+Use the structure “empty present → tactile memory fragments → emotional compression → return to an altered empty present.” Alternate a deserted or changed familiar place with incomplete memories of ordinary life. Use hard cuts on musical beats, occasional overexposed light transitions, and one original paradoxical image. End with a static spatial shot whose internal motion—wind, curtain, dust, rain, water, smoke, or shifting light—carries the afterimage.
 
-### Memory poem — conditional
+### Observational family drama — alternative
 
-Use only when the user asks for a memory montage, a dialogue-free poetic film, or supplies a reference similar to `Kenopsia`. Anchor the film in one present-day activity, insert short memory fragments, allow no more than one original surreal image, and return to a still long take at the end. Do not reuse the reference video's burning piano, fingertip butterfly, water-and-fire room, or other exact image combinations.
+Use one concrete household task or shared errand to carry the relationship change. Shape the story as: ordinary entry → small mismatch → incomplete exchange → slight behavioral change → object or space echoes the opening. Preserve the reference video's light, texture, rhythm, sound, and still ending while letting the family action provide the story spine.
 
 ## Workflow
 
@@ -53,6 +53,8 @@ Create a “Creative Brief” text node containing:
 - Recurring household object or sound
 - Narrative mode, aspect ratio, time of day, weather, and dialogue language
 - The feeling left by the ending, without a theme statement
+
+Localize the node title and every field label into `interaction_language`; “Creative Brief” is only the English semantic name.
 
 Let conflict come from mismatched needs, hesitation, habit, or concealment. Avoid a one-note villain, illness spectacle, coincidence, forced twist, or universal reconciliation.
 
@@ -76,7 +78,7 @@ Generate character and location reference images first, then 2–3 keyframes fro
 
 For every shot, provide: number, duration, dramatic function, scale, camera position and motion, character action, dialogue or sound, opening frame, closing frame, continuity anchors, image prompt, and video prompt.
 
-In Observation Mode, favor medium/wide framing, eye-level viewpoints, and compositions through doors or windows. Include at least one spatial or still-life breathing shot every 3–4 shots. In Memory-Poem Mode, fragments may run 1.5–3 seconds, but each must connect through action, sound, or object, and the film must retain at least two 5–10 second present-day anchor shots.
+Favor corridor depth, door and window frames, centered subjects, silhouettes against intense backlight, tactile close-ups, and occasional gentle handheld tracking. Alternate 2–3 second fragments with at least two 5–10 second present-day anchors. Use shallow focus for sensory details and deeper focus for the final static spatial shot.
 
 ### 5. Generate images and continuous video
 
@@ -90,7 +92,7 @@ Set the aspect ratio only for the storyboard and initial video. After the initia
 
 ### 6. Design sound
 
-Prioritize dialogue clarity, then ambient bed, action detail, and music. Establish space with refrigerator hum, dishes, rain on an awning, distant traffic, corridor footsteps, insects, or comparable sounds before adding music. Keep music sparse and unable to substitute for performance.
+Prioritize a slow original lo-fi instrumental pulse, then ambient bed and tactile action details. Use warm analog synth pads, restrained drums, wind, muffled footsteps, cloth or paper movement, room resonance, or comparable sounds. Align hard cuts with beats or musical turns while keeping at least one ambience-only passage. Avoid dialogue unless explicitly requested.
 
 When music is requested or a compatible action is connected, generate a fully original instrumental cue matched to the verified final video duration. Preserve the completed video if audio generation or embedding fails; retry only the failed audio unit through the bounded recovery in [Continuous Video Generation](references/video-generation-workflow.md).
 
@@ -104,7 +106,7 @@ Run [Quality Check](references/quality-check.md) before delivery. Fix story logi
 
 ## Deliverables
 
-Return, in order:
+Return the following semantic sections in order, translating every section title and all creative content into the resolved languages:
 
 1. Assumptions and logline
 2. Character relationship and emotional subtext
@@ -116,6 +118,8 @@ Return, in order:
 8. Canvas node and connection plan
 9. Brief quality-check result
 
+Before delivery, run a language gate: compare every visible title, heading, paragraph, dialogue line, subtitle, node label, and final note with `interaction_language` or `story_language` as applicable. If the user wrote in Chinese and did not explicitly request English creative output, replace unintended English titles, labels, and prose with natural Simplified Chinese before responding.
+
 ## Import safety
 
-Before publishing or handing off the Skill repository, retain only `.md`, `.txt`, `.json`, `.yaml`, and `.yml` files, with lowercase extensions. Regular file and folder names must use only letters, numbers, underscores, and hyphens, with each name no longer than 64 characters. Name the license `license.md`, never extensionless `LICENSE`. Keep reference images, videos, archives, and generated outputs on the Lumina canvas rather than in the Skill repository.
+Before publishing or handing off the Skill repository, retain only `.md`, `.txt`, `.json`, `.yaml`, and `.yml` files, with lowercase extensions. Regular file and folder names must use only letters, numbers, underscores, and hyphens, with each name no longer than 64 characters. Name the license `license.md`, never extensionless `LICENSE`. Keep the required local `.skillignore` in the Aime workspace but exclude it from the GitHub branch used by Lumina import because Lumina rejects dotfiles without a supported extension. Keep reference images, videos, archives, and generated outputs on the Lumina canvas rather than in the Skill repository.

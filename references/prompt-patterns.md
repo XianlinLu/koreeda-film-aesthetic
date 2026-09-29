@@ -1,6 +1,6 @@
 # Prompt Patterns
 
-Fill every bracket with shot-specific information and repeat complete continuity anchors in every prompt. Do not include a living filmmaker's name, a film title, or a remake request in downstream prompts.
+Fill every bracket with shot-specific information and repeat complete continuity anchors in every prompt. Apply the style kernel in [Kenopsia Reference Style Lock](reference-video.md) to every storyboard and moving-image prompt. Do not include a living filmmaker's name, a film title, or a remake request in downstream prompts.
 
 ## Character reference
 
@@ -17,13 +17,13 @@ Fill every bracket with shot-specific information and repeat complete continuity
 ## Storyboard image
 
 ```text
-[Aspect ratio], live-action cinematic frame. [Complete character anchor] is in [complete location anchor], performing [one visible action]. [Distance, eyelines, and occlusion between characters]. [Shot scale], [camera height and angle], [locked composition or frame-within-frame]. [Time, weather, key-light direction], natural skin, muted neutrals, moderate depth of field, lived-in detail, subtle film grain. Express emotion through [hand action, pause, or object]. No text, watermark, or brand mark.
+[Aspect ratio], dreamlike live-action memory-film frame. [Complete character anchor] is in [complete location anchor], performing [one visible action]. [Distance, eyelines, and occlusion]. [Centered / deep corridor / doorway frame / tactile insert], [camera height and angle], [locked composition / gentle handheld tracking]. Intense [backlight source] with visible beams and controlled flare, warm golden highlights against cool cyan-green shadows, soft halation, organic 35 mm grain, slight chromatic aberration, [shallow or deep] focus, lived-in texture. Express emotion through [hand action, pause, object, or environmental motion]. No clean commercial gloss, text, watermark, logo, or copied signature imagery.
 ```
 
 ## Initial complete video
 
 ```text
-Duration [supported initial duration]. Preserve the storyboard image's identity, wardrobe, location layout, light, and color. 00:00-[time point]: [opening action]. [time point]-[end]: [one continuous development], settling into [continuation-ready closing state]. Camera is [locked / slow pan / gentle follow / very slow push] with stable, motivated movement. Keep natural speed and plausible physics. Do not add people or objects, alter faces, clothing, weather, or spatial layout, jump the camera, deform bodies, or add text and watermarks.
+Duration [supported initial duration]. Preserve the storyboard image's identity, wardrobe, location layout, intense backlight, golden-to-cyan palette, halation, grain, and focus behavior. 00:00-[time point]: [opening action]. [time point]-[end]: [one continuous development], settling into [continuation-ready closing state]. Use restrained slow-motion feeling and [locked camera with internal motion / gentle handheld tracking / very slow push]. Keep plausible physics. Do not add people or objects, alter faces, clothing, weather, spatial layout, or frame shape, deform bodies, clean away the film texture, or add text and watermarks.
 ```
 
 ## True extension
@@ -31,7 +31,7 @@ Duration [supported initial duration]. Preserve the storyboard image's identity,
 Submit the latest verified complete video as the input and omit the `ratio` field.
 
 ```text
-Extend by [supported increment]. Preserve the input video's identity, wardrobe, scene geometry, lighting, color, motion direction, props, and audio logic. 00:00-[time point]: continue naturally from the existing final frame with [next action]. [time point]-[end]: [one relationship or story change], settling into [next continuation-ready state]. Keep camera behavior and physical timing plausible. Return the complete extended video, not an isolated tail clip. Do not reset the scene, change the frame shape, add people or objects, deform bodies, or add text and watermarks.
+Extend by [supported increment]. Preserve the input video's identity, wardrobe, scene geometry, intense backlight, golden-to-cyan palette, halation, organic grain, focus behavior, motion direction, props, and sound logic. 00:00-[time point]: continue naturally from the existing final frame with [next action]. [time point]-[end]: [one memory or relationship change], settling into [next continuation-ready state]. Maintain its restrained slow-motion feeling and camera behavior. Return the complete extended video, not an isolated tail clip. Do not reset the scene, change the frame shape, clean away the analog texture, add people or objects, deform bodies, or add text and watermarks.
 ```
 
 Every call-local timeline starts at `00:00`. Keep cumulative film positions outside generation prompts.
@@ -45,7 +45,7 @@ Duration [1.5–3] seconds. A subjective memory triggered by [present action, ob
 ## Sound
 
 ```text
-Authentic [interior/exterior] ambience. Near field: [action detail]. Mid field: [continuous room or street tone]. Far field: [sound extending the space]. Dialogue is natural, stable, and includes brief pauses. No exaggerated reverb or trailer impacts. If music is used, choose sparse acoustic instruments, keep it below dialogue, enter at [point], and leave at [point].
+Original slow lo-fi instrumental pulse with restrained drums and nostalgic analog synth pad. Near field: [tactile action detail]. Mid field: [continuous room tone, wind, paper, cloth, water, or footsteps]. Far field: [sound extending the empty space]. Include [ambience-only interval]. Align selected hard cuts with beats or musical turns. No dialogue unless requested; no recognizable melody, lyrics, exaggerated trailer impact, or copied reference audio.
 ```
 
 ## Shot entry example

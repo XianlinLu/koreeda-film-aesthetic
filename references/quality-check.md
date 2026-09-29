@@ -36,9 +36,11 @@ Score each item from 0 to 2: 0 = absent, 1 = weak, 2 = clear. Revise before deli
 ## Canvas delivery — blocker
 
 - Script, storyboard, references, keyframes, videos, and sound are clearly grouped.
-- Every final video traces back to a storyboard entry and visual reference.
-- Only the strongest valid version remains; limited alternatives have an explicit decision label.
-- Final shots are in playback order and total duration is within two seconds of the target.
+- The initial video traces back to its storyboard image and visual references.
+- Every extension consumes the immediately preceding verified complete video and returns a longer complete video.
+- Every video prompt starts its local timeline at `00:00`; extension requests contain no `ratio` field.
+- The final artifact is not assembled from independent clips, loops, freezes, speed changes, or padding.
+- The latest verified video duration matches the locked target within the action's declared tolerance.
 
 ## Repair order
 

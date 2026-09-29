@@ -20,11 +20,21 @@ Fill every bracket with shot-specific information and repeat complete continuity
 [Aspect ratio], live-action cinematic frame. [Complete character anchor] is in [complete location anchor], performing [one visible action]. [Distance, eyelines, and occlusion between characters]. [Shot scale], [camera height and angle], [locked composition or frame-within-frame]. [Time, weather, key-light direction], natural skin, muted neutrals, moderate depth of field, lived-in detail, subtle film grain. Express emotion through [hand action, pause, or object]. No text, watermark, or brand mark.
 ```
 
-## Shot video
+## Initial complete video
 
 ```text
-Duration [5/10] seconds. Preserve the reference image's identity, wardrobe, location layout, light, and color. Begin on [opening frame]. [Character] completes [one continuous action]; at [time point], [small expression, eyeline, or action change] occurs; end on [closing frame]. Camera is [locked / slow pan / gentle follow / very slow push] with stable, motivated movement. Keep natural speed and plausible physics. Do not add people or objects, alter faces, clothing, weather, or spatial layout, jump the camera, deform bodies, or add text and watermarks.
+Duration [supported initial duration]. Preserve the storyboard image's identity, wardrobe, location layout, light, and color. 00:00-[time point]: [opening action]. [time point]-[end]: [one continuous development], settling into [continuation-ready closing state]. Camera is [locked / slow pan / gentle follow / very slow push] with stable, motivated movement. Keep natural speed and plausible physics. Do not add people or objects, alter faces, clothing, weather, or spatial layout, jump the camera, deform bodies, or add text and watermarks.
 ```
+
+## True extension
+
+Submit the latest verified complete video as the input and omit the `ratio` field.
+
+```text
+Extend by [supported increment]. Preserve the input video's identity, wardrobe, scene geometry, lighting, color, motion direction, props, and audio logic. 00:00-[time point]: continue naturally from the existing final frame with [next action]. [time point]-[end]: [one relationship or story change], settling into [next continuation-ready state]. Keep camera behavior and physical timing plausible. Return the complete extended video, not an isolated tail clip. Do not reset the scene, change the frame shape, add people or objects, deform bodies, or add text and watermarks.
+```
+
+Every call-local timeline starts at `00:00`. Keep cumulative film positions outside generation prompts.
 
 ## Memory fragment
 

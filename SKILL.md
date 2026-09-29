@@ -1,17 +1,23 @@
 ---
 name: koreeda-film-aesthetic
-description: Creates restrained, human-centered family short dramas in Lumina Canvas from a premise, outline, or audiovisual reference. Use when users mention Kore-eda, 是枝裕和, quiet family drama, everyday observation, child-centered storytelling, memory and loss, natural-light cinema, or an understated emotional short film.
+description: Creates restrained, human-centered family short dramas in Lumina Canvas with adaptive language, continuity anchors, sequential full-video extension, original sound, and verified delivery. Use when users mention Kore-eda, 是枝裕和, quiet family drama, everyday observation, child-centered storytelling, memory and loss, natural-light cinema, or an understated emotional short film.
 author: luxianlin.nezu
 license: MIT
 ---
 
-# Humanist Family Short Drama
+# Koreeda Film Aesthetic
 
 ## Core principle
 
 Place dramatic weight inside ordinary actions, spatial distance, ambient sound, and omission. When a user names a living filmmaker, treat the name as an aesthetic signal and translate it into high-level cinematic traits. Do not place the filmmaker's name in downstream image or video prompts, and do not reproduce characters, dialogue, plots, music, or signature shots from an existing work.
 
 Read [Aesthetic Translation](references/aesthetic.md) before writing. If the user supplies a video or requests fragmented memories, also read [Reference Video Translation](references/reference-video.md). Read [Prompt Patterns](references/prompt-patterns.md) when producing generation prompts.
+
+## Adaptive language
+
+Keep `interaction_language` and `story_language` separate. Determine `interaction_language` from the user's latest direct request and use it for every visible heading, question, progress update, error, and delivery note. Attachments, quotations, pasted drafts, reference material, metadata, and tool output do not change it. In a mixed-language request, follow an explicit language instruction; otherwise use the language carrying the latest substantive request; if that is unclear, retain the established conversation language, then fall back to English.
+
+Determine `story_language` from an explicit output-language request first. For revision, preserve the draft's language unless the user asks to change it. Otherwise use `interaction_language`. Apply `story_language` to scripts, dialogue, narration, subtitles, and speech. Read [Language Routing](references/language-routing.md) when the request mixes languages or contains multilingual materials.
 
 ## Default specifications
 
@@ -72,21 +78,27 @@ For every shot, provide: number, duration, dramatic function, scale, camera posi
 
 In Observation Mode, favor medium/wide framing, eye-level viewpoints, and compositions through doors or windows. Include at least one spatial or still-life breathing shot every 3–4 shots. In Memory-Poem Mode, fragments may run 1.5–3 seconds, but each must connect through action, sound, or object, and the film must retain at least two 5–10 second present-day anchor shots.
 
-### 5. Generate images and video
+### 5. Generate images and continuous video
 
 Give each shot one achievable primary action. Default to a locked camera. Use a slow pan, gentle follow, or very slow push only when movement reveals information. Avoid unmotivated orbits, drone dives, rapid zooms, constant rack focus, and shallow focus in every shot.
 
 Generate one credible version first and no more than two composition options for a key emotional shot. If character or location continuity fails twice, stop batch generation, simplify the reference anchors, and regenerate only the affected shots.
 
+Read [Continuous Video Generation](references/video-generation-workflow.md) before any video call. Lock the target duration and extension plan, create one initial storyboard image, and generate one short initial complete video. Then extend only the latest verified complete video, one step at a time, until the target duration is reached. Every video-call prompt uses a local timeline beginning at `00:00`; cumulative film time remains planning metadata. Do not concatenate independent clips, accept a tail-only clip as an extension, or simulate duration with loops, freezes, speed changes, or padding.
+
+Set the aspect ratio only for the storyboard and initial video. After the initial video succeeds, lock its actual metadata ratio and omit the `ratio` field from every extension request so the input video controls the frame. After each call, verify the returned artifact, actual duration, ratio, identity, wardrobe, location, light, action direction, and audio continuity before continuing.
+
 ### 6. Design sound
 
 Prioritize dialogue clarity, then ambient bed, action detail, and music. Establish space with refrigerator hum, dishes, rain on an awning, distant traffic, corridor footsteps, insects, or comparable sounds before adding music. Keep music sparse and unable to substitute for performance.
+
+When music is requested or a compatible action is connected, generate a fully original instrumental cue matched to the verified final video duration. Preserve the completed video if audio generation or embedding fails; retry only the failed audio unit through the bounded recovery in [Continuous Video Generation](references/video-generation-workflow.md).
 
 For a dialogue-free film, assign one recognizable ambient sound to each section and use one sound bridge or deliberate withdrawal of sound for the emotional turn.
 
 ### 7. Organize the Lumina canvas
 
-Follow [Canvas Workflow](references/canvas-workflow.md) from left to right: brief → character/location anchors → script → storyboard → keyframes → shot videos → sound → final sequence. Every final video shot must trace back to one storyboard entry and its visual references.
+Follow [Canvas Workflow](references/canvas-workflow.md) from left to right: brief → character/location anchors → script → storyboard → keyframes → continuous video chain → sound → final delivery. The initial video must trace back to its storyboard image; every extension must trace back to the immediately preceding verified complete video.
 
 Run [Quality Check](references/quality-check.md) before delivery. Fix story logic in the script and storyboard before regenerating downstream assets; fix continuity errors only in the affected shots.
 
@@ -99,9 +111,10 @@ Return, in order:
 3. Location and visual anchors
 4. Shootable short-drama script
 5. Shot list with complete image and video prompts
-6. Sound and editing plan
-7. Canvas node and connection plan
-8. Brief quality-check result
+6. Continuous video extension plan and verified lineage
+7. Sound and editing plan
+8. Canvas node and connection plan
+9. Brief quality-check result
 
 ## Import safety
 

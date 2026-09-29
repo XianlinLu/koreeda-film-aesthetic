@@ -7,25 +7,26 @@
 3. Script: scene actions, dialogue, sound, and relationship changes.
 4. Storyboard: one entry per shot with start, action, end, and duration.
 5. Keyframes: opening, turning point, and ending visual references.
-6. Shot videos: numbered consistently and connected to their storyboard and reference images.
+6. Continuous video chain: initial complete video followed by sequential extensions of the latest verified complete video.
 7. Sound: dialogue, ambient bed, action detail, and music layers.
-8. Final sequence: accepted shots only, arranged in playback order.
+8. Final delivery: the last verified complete video, synchronized original audio, and validation notes.
 
 ## Node naming
 
-Use `type_number_short-description`, such as `shot_04_empty-bowl` and `video_04_empty-bowl`. Keep a two-digit shot number and use only letters, numbers, underscores, and hyphens. Avoid spaces and special characters.
+Use `type_number_short-description`, such as `beat_04_empty-bowl`, `video_00_initial`, and `video_02_extension`. Keep a two-digit number and use only letters, numbers, underscores, and hyphens. Avoid spaces and special characters.
 
 ## Connections
 
-- Connect character and location anchors to every relevant keyframe and video node.
-- Connect each video node to at least one storyboard entry and one visual reference.
+- Connect character and location anchors to every relevant keyframe and the initial-video node.
+- Connect the initial video to its storyboard image. Connect each extension only to the immediately preceding complete-video node and its next narrative beat.
 - Connect each sound node to a defined shot or section; avoid undated “whole-film mood” nodes.
-- Connect only accepted versions to the final sequence. Place alternatives to the side and label them `alt`.
+- Connect only the latest verified complete video to final delivery. Place failed or alternate branches to the side and label them `failed` or `alt`.
 
 ## Recovery paths
 
-- Character drift: disconnect the failed video and return only to the character anchor and that shot's keyframe.
+- Character drift: preserve the latest verified complete video and retry only the failed initial or extension step with stronger identity anchors.
 - Spatial jump: recheck door/window direction, key light, and furniture in the location anchor.
 - Incomplete action: split multiple actions into two shots or extend the shot to 10 seconds.
 - Excessive speed: lengthen present-day anchor shots instead of duplicating frames or using slow motion.
 - Overstated emotion: remove music first, then explanatory dialogue, then unnecessary close-ups.
+- Ratio error during extension: remove the `ratio` field and retry only that extension; do not crop or restart the chain.

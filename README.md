@@ -36,10 +36,10 @@ The following English text matches every field shown in the Skill form and stays
 Koreeda Film Aesthetic
 ```
 
-### One sentence introduction — 198/300 characters
+### One sentence introduction — 299/300 characters
 
 ```text
-Create restrained, human-centered short films in Lumina Canvas with adaptive language, continuity anchors, storyboard prompts, sequential full-video extension, original sound, and verified delivery.
+Turns premises into restrained, human-centered short films with adaptive language and video extension. [How to Use] Add a premise, duration, and references; approve the brief and storyboard. [Scenarios] Quiet family drama, memory and loss, poetic adaptation. [Outputs] Script, prompts, video, audio.
 ```
 
 ### Instructions for use — 999/1,000 characters

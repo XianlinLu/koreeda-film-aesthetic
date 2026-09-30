@@ -1,7 +1,6 @@
 ---
 name: koreeda-film-aesthetic
-description: Creates restrained, human-centered family short dramas in Lumina Canvas with adaptive language, one-node-per-character assets, confirmation-gated optional character audio, sequential full-video extension, original sound, and verified delivery. Use when users mention Kore-eda, 是枝裕和, quiet family drama, everyday observation, child-centered storytelling, memory and loss, natural-light cinema, or an understated emotional short film.
-author: luxianlin.nezu
+description: Creates restrained family short dramas in Lumina Canvas with adaptive language, separate character assets, approval-gated audio, continuous video extension, original sound, and verified delivery.
 license: MIT
 ---
 

@@ -8,7 +8,7 @@ license: MIT
 
 ## Core principle
 
-Place dramatic weight inside ordinary actions, spatial distance, ambient sound, and omission. For moving-image work, use the supplied `Kenopsia` reference as the default style benchmark: associative memory montage, intense backlight, analog film texture, restrained slow motion, rhythmic hard cuts, and a still spatial ending. Match its visual grammar and emotional cadence without reproducing its people, title, logos, music, or exact image combinations.
+Place dramatic weight inside ordinary actions, spatial distance, ambient sound, and omission. For moving-image work, treat the supplied `Kenopsia` video as a binding runtime reference rather than optional inspiration. Match its color relationship, exposure behavior, optical texture, selective directional motion blur, camera energy, cut rhythm, and emotional cadence while creating new people, places, actions, objects, and music.
 
 Read [Aesthetic Translation](references/aesthetic.md) before writing. Read [Reference Video Translation](references/reference-video.md) before every moving-image task, and treat its style-lock rules as defaults unless the user explicitly requests a different visual treatment. Read [Character Asset Workflow](references/character-asset-workflow.md) before generating any character asset or character audio. Read [Prompt Patterns](references/prompt-patterns.md) when producing generation prompts.
 
@@ -25,7 +25,8 @@ When details are missing, state and use these assumptions:
 - Duration: approximately 75–80 seconds; aspect ratio: 16:9. Use another duration or ratio only when the user requests it or the delivery platform requires it.
 - Cast: 2–3 principal characters; locations: 1–2 ordinary spaces; shots: 8–12.
 - Rhythm: 2–3 second memory fragments between 5–10 second spatial anchors; finish with a 6–10 second locked wide or medium shot.
-- Image: live-action realism, strong backlight, golden highlights, cyan-green shadows, soft halation, visible 35 mm grain, slight chromatic aberration, and selective shallow focus.
+- Image: live-action realism, strong motivated backlight, localized golden-orange highlight clipping, readable cyan-green or olive-teal shadows, soft bloom and halation, visible 35 mm grain, slight chromatic aberration, and selective shallow focus.
+- Motion: 24-fps appearance. Use normal motion in spatial anchors, directional long-shutter tracking blur in moving memories, and rare overexposed transition smears; never blur every shot uniformly.
 - Dialogue: none by default. When requested, keep it brief, indirect, and subordinate to image and sound.
 
 Ask one consolidated question only when missing information would change the relationship, ending, or essential composition. Resolve other details independently.
@@ -41,6 +42,12 @@ Use the structure “empty present → tactile memory fragments → emotional co
 Use one concrete household task or shared errand to carry the relationship change. Shape the story as: ordinary entry → small mismatch → incomplete exchange → slight behavioral change → object or space echoes the opening. Preserve the reference video's light, texture, rhythm, sound, and still ending while letting the family action provide the story spine.
 
 ## Workflow
+
+### 0. Bind and approve the reference look
+
+Add the user-supplied video as `reference_00_kenopsia`, connect it to the available project-style or visual-reference input, and create `style_lock_00` from [Reference Video Translation](references/reference-video.md). Generate four new look-test images and one shortest-supported lateral-motion test. Compare them beside the reference and pause once for explicit user approval. Do not generate final storyboards or video until `style_lock_status: approved` is recorded.
+
+If no connected action can consume the uploaded video or approved reference frames, stop and explain the limitation. Do not claim complete style matching from prose alone or attempt to repair unrelated footage with a final filter.
 
 ### 1. Build the creative brief
 
@@ -69,17 +76,17 @@ Before generating final shots, create separate reference nodes:
 
 - One character asset node per named character: apparent age, face, hair, body language, clothing layers, palette, and carried object. Each character asset image may show multiple views of the same character, but it must contain exactly one character identity. Never place two or more characters in one character asset image or node.
 - Location anchor: floor relationships, doors and windows, furniture, time, weather, key-light direction, and lived-in details.
-- Visual anchor: aspect ratio, lens tendency, camera height, color, grain, and movement limits.
+- Visual anchor: approved style-lock status, aspect ratio, 24-fps appearance, lens tendency, camera height, split-tone color, exposure behavior, grain, halation, and movement/blur limits.
 
 Generate each character asset independently, connect its source description to its dedicated generation node, verify the returned image is attached to that node, and then stop for user confirmation. Keep approved assets unchanged and regenerate only rejected characters. Do not generate character-dependent audio or video from an unconfirmed asset.
 
 After a character asset is approved, generate that character's voice or audio only when the user requests it. Connect the approved single-character asset node to that character's dedicated audio-generation node before running the action, and verify the edge and output. If the user does not request audio for that character, create no character-audio node and continue without it. See [Character Asset Workflow](references/character-asset-workflow.md) for the confirmation and dependency rules.
 
-After required confirmations, generate location reference images and 2–3 keyframes from different story sections. Continue only when those keyframes agree. Repeat complete anchors in every relevant prompt; never use “same as above.”
+After required confirmations, generate location reference images and 2–3 keyframes from different story sections. Continue only when those keyframes agree with each other and with the approved look test. Repeat complete anchors in every relevant prompt; never use “same as above.”
 
 ### 4. Design the shots
 
-For every shot, provide: number, duration, dramatic function, scale, camera position and motion, character action, dialogue or sound, opening frame, closing frame, continuity anchors, image prompt, and video prompt.
+For every shot, provide: number, duration, dramatic function, scale, camera position and motion, `blur_mode` (`anchor`, `tracking-memory`, or `transition-smear`), readable subject anchor, blur direction, character action, dialogue or sound, opening frame, closing frame, continuity anchors, image prompt, and video prompt.
 
 Favor corridor depth, door and window frames, centered subjects, silhouettes against intense backlight, tactile close-ups, and occasional gentle handheld tracking. Alternate 2–3 second fragments with at least two 5–10 second present-day anchors. Use shallow focus for sensory details and deeper focus for the final static spatial shot.
 
@@ -87,7 +94,7 @@ Favor corridor depth, door and window frames, centered subjects, silhouettes aga
 
 Give each shot one achievable primary action. Default to a locked camera. Use a slow pan, gentle follow, or very slow push only when movement reveals information. Avoid unmotivated orbits, drone dives, rapid zooms, constant rack focus, and shallow focus in every shot.
 
-Generate one credible version first and no more than two composition options for a key emotional shot. If character or location continuity fails twice, stop batch generation, simplify the reference anchors, and regenerate only the affected shots.
+Generate one credible version first and no more than two composition options for a key emotional shot. Keep the approved gold/amber highlight versus cyan-green/teal shadow relationship and the shot's declared blur mode inside every generation call. If character, location, color, or optical behavior fails twice, stop batch generation, simplify the anchors, and regenerate only the affected shots.
 
 Read [Continuous Video Generation](references/video-generation-workflow.md) before any video call. Lock the target duration and extension plan, create one initial storyboard image, and generate one short initial complete video. Then extend only the latest verified complete video, one step at a time, until the target duration is reached. Every video-call prompt uses a local timeline beginning at `00:00`; cumulative film time remains planning metadata. Do not concatenate independent clips, accept a tail-only clip as an extension, or simulate duration with loops, freezes, speed changes, or padding.
 
@@ -112,16 +119,17 @@ Run [Quality Check](references/quality-check.md) before delivery. Fix story logi
 Return the following semantic sections in order, translating every section title and all creative content into the resolved languages:
 
 1. Assumptions and logline
-2. Character relationship and emotional subtext
-3. Separate character asset nodes and confirmation status
-4. Optional per-character audio nodes and verified connections
-5. Location and visual anchors
-6. Shootable short-drama script
-7. Shot list with complete image and video prompts
-8. Continuous video extension plan and verified lineage
-9. Sound and editing plan
-10. Canvas node and connection plan
-11. Brief quality-check result
+2. Reference-video binding, look tests, and approved style-lock status
+3. Character relationship and emotional subtext
+4. Separate character asset nodes and confirmation status
+5. Optional per-character audio nodes and verified connections
+6. Location and visual anchors
+7. Shootable short-drama script
+8. Shot list with complete image and video prompts, blur modes, and motion directions
+9. Continuous video extension plan and verified lineage
+10. Sound and editing plan
+11. Canvas node and connection plan
+12. Brief quality-check result with start, middle, motion, and ending style comparisons
 
 Before delivery, run a language gate: compare every visible title, heading, paragraph, dialogue line, subtitle, node label, and final note with `interaction_language` or `story_language` as applicable. If the user wrote in Chinese and did not explicitly request English creative output, replace unintended English titles, labels, and prose with natural Simplified Chinese before responding.
 

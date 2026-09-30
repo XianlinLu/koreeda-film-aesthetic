@@ -36,8 +36,12 @@ Score each item from 0 to 2: 0 = absent, 1 = weak, 2 = clear. Revise before deli
 
 ## Reference-style fidelity — blocker
 
-- Intense backlight, visible beams or controlled flare, and a warm-gold versus cool-cyan shadow relationship are present.
-- Organic film grain, halation, slight edge softness, and restrained chromatic aberration survive across the full video.
+- The uploaded source, `style_lock_00`, four look-test images, motion test, and explicit user approval are present and connected before final generation.
+- Opening, middle, strongest-motion, and ending samples preserve cyan-green/olive-teal shadows and white-gold/fire-orange highlights; they do not drift to beige, neutral, magenta-shadowed, uniformly warm, or generic commercial orange-teal.
+- Motivated backlight, visible beams or flare, localized highlight clipping, soft bloom, and amber-red halation remain visible without turning the image into flat haze.
+- Organic film grain, slight edge softness, and restrained red/cyan chromatic fringing survive across the full video; skin is not denoised or beauty-retouched.
+- Every shot declares `anchor`, `tracking-memory`, or `transition-smear`. Blur is optical, directional, and aligned to movement; a readable subject or spatial anchor remains.
+- Held portraits and the ending remain legible. No whole-frame Gaussian blur, duplicated anatomy, frame interpolation, optical-flow warping, or unrelated ghost trail remains.
 - Brief tactile fragments alternate with longer spatial anchors; hard cuts follow musical beats or turns.
 - Camera movement is limited to gentle handheld tracking, a very slow reveal, or a locked frame with internal motion.
 - The ending holds on a static wide or medium composition before fading to black, without copying the reference's exact objects or scene.
@@ -61,4 +65,4 @@ Score each item from 0 to 2: 0 = absent, 1 = weak, 2 = clear. Revise before deli
 
 ## Repair order
 
-Fix story causality first, character/location anchors second, single-shot action third, and color, music, and transitions last. Retry one shot no more than twice. If it still fails, shorten the action, reduce the number of visible people, or use a locked camera instead of adding more prompt clauses.
+Fix story causality first, reference binding and look-test approval second, character/location anchors third, and single-shot action fourth. Treat color, exposure, texture, and motion-blur drift as blockers rather than optional finishing. Retry one affected visual unit no more than twice. If it still fails, shorten the action, reduce visible people, choose `anchor` mode, or stop and report that the connected model cannot maintain the approved look. Never hide drift with a final filter.

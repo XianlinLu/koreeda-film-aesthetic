@@ -1,15 +1,16 @@
 # Lumina Canvas Workflow
 
-## Eight columns from left to right
+## Nine columns from left to right
 
 1. Creative brief: request, assumptions, mode, duration, and aspect ratio.
-2. Character/location anchors: one single-character asset node per identity, confirmation status, location references, and continuity notes.
-3. Script: scene actions, dialogue, sound, and relationship changes.
-4. Storyboard: one entry per shot with start, action, end, and duration.
-5. Keyframes: opening, turning point, and ending visual references.
-6. Continuous video chain: initial complete video followed by sequential extensions of the latest verified complete video.
-7. Sound: dialogue, ambient bed, action detail, and music layers.
-8. Final delivery: the last verified complete video, synchronized original audio, and validation notes.
+2. Style lock: uploaded `reference_00_kenopsia`, `style_lock_00`, four look-test images, one motion test, and approval status.
+3. Character/location anchors: one single-character asset node per identity, confirmation status, location references, and continuity notes.
+4. Script: scene actions, dialogue, sound, and relationship changes.
+5. Storyboard: one entry per shot with start, action, end, duration, blur mode, readable anchor, and blur direction.
+6. Keyframes: opening, turning point, and ending visual references.
+7. Continuous video chain: initial complete video followed by sequential extensions of the latest verified complete video.
+8. Sound: dialogue, ambient bed, action detail, and music layers.
+9. Final delivery: the last verified complete video, synchronized original audio, and validation notes.
 
 ## Node naming
 
@@ -18,6 +19,7 @@ Use `type_number_short-description`, such as `beat_04_empty-bowl`, `video_00_ini
 ## Connections
 
 - Connect each character description to one dedicated character-asset generation node. Verify the output and edge, then stop for user approval.
+- Connect `reference_00_kenopsia` to the style-binding route and every visual action that accepts a separate style reference. Connect approved look-test frames to storyboard and initial-video actions. Do not report complete fidelity when no such reference route exists.
 - For each requested voice, connect only the corresponding approved character asset to its dedicated audio-generation node. Skip the audio node when that character does not need audio.
 - Connect approved single-character assets separately to every relevant keyframe and scene-generation node. Multi-character scenes may receive multiple separate asset inputs, but character asset nodes never contain multiple identities.
 - Connect the initial video to its storyboard image. Connect each extension only to the immediately preceding complete-video node and its next narrative beat.
@@ -34,3 +36,4 @@ Use `type_number_short-description`, such as `beat_04_empty-bowl`, `video_00_ini
 - Excessive speed: lengthen present-day anchor shots instead of duplicating frames or using slow motion.
 - Overstated emotion: remove music first, then explanatory dialogue, then unnecessary close-ups.
 - Ratio error during extension: remove the `ratio` field and retry only that extension; do not crop or restart the chain.
+- Palette or blur drift: preserve the latest verified complete video, reattach the approved look tests and reference video where supported, restate the declared blur mode and direction, and retry only the failed visual unit. Never hide drift with a global finishing filter.

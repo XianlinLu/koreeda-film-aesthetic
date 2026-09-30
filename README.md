@@ -128,7 +128,9 @@ A local `.skillignore` is retained for Aime packaging but intentionally excluded
 
 ## Reference-video style lock
 
-Generated videos default to the supplied `Kenopsia` reference's transferable visual grammar: 16:9 dreamlike memory montage, 2–3 second fragments between longer spatial anchors, intense backlight and flare, gold highlights against cyan-green shadows, 35 mm grain and halation, selective shallow focus, rhythmic hard cuts, restrained slow motion, original lo-fi sound, and a static ending with subtle environmental movement. The Skill creates new people, places, actions, music, and one original paradoxical image rather than copying the reference's exact shots, title, logos, or signature object combinations.
+Generated videos use the supplied `Kenopsia` file as a mandatory runtime style reference, not a loose mood-board. Before final generation, the Agent binds the uploaded video, creates four look-test frames plus one motion test, and waits for one explicit style approval. The locked look preserves localized white-gold/fire-orange clipping, cyan-green and olive-teal shadows, motivated backlight, bloom, amber-red halation, organic 35 mm grain, restrained chromatic fringing, and selective directional long-shutter blur at a 24-fps appearance. Opening, middle, strongest-motion, and ending samples are compared before delivery. If the connected action cannot consume the video or approved frame references, the Skill stops instead of claiming complete fidelity from prose or a final filter.
+
+The Skill still creates new people, places, actions, music, and paradoxical imagery rather than copying the reference's exact shots, title, logos, music, or signature object combinations.
 
 ## Example requests
 
@@ -185,7 +187,9 @@ Review the creative brief, character anchor, and location anchor before asking t
 
 ## 参考视频风格锁定
 
-生成视频默认完整采用所给 `Kenopsia` 参考片可迁移的视听语法：16:9 梦境式记忆蒙太奇，以 2–3 秒碎片穿插较长空间锚点；强逆光与炫光、金色高光和青绿色阴影、35 mm 胶片颗粒与光晕、选择性浅景深；硬切跟随音乐节拍，动作带克制的慢动作感；使用原创低保真音乐与环境声，并以含细微环境运动的静止长镜头收尾。人物、地点、动作、音乐和矛盾意象保持原创，不复制参考片的具体镜头、片名、Logo 或标志性物件组合。
+`Kenopsia` 视频是运行时必须绑定的视觉参考，不是宽泛情绪板。最终生成前，Agent 必须把视频接入风格参考节点，先生成四张风格测试图与一段最短可用的横向运动测试，经过一次明确确认后才继续。锁定项包括局部白金/火橙高光溢出、青绿与橄榄蓝绿色阴影、强逆光、bloom、琥珀红色 halation、有机 35 mm 颗粒、轻微色差，以及 24 fps 观感下有方向的选择性长快门拖影。
+
+交付前必须并排检查开场、中段空间镜头、最强运动模糊片段和结尾定镜。若连接的生成动作无法读取参考视频或已确认参考帧，Skill 会停止并说明限制，不会仅凭文字提示或后期滤镜声称“完全一致”。人物、地点、动作、音乐和矛盾意象仍保持原创，不复制参考片的具体镜头、片名、Logo、音乐或标志性物件组合。
 
 ## 两种创作模式
 

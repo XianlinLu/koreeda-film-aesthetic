@@ -10,7 +10,7 @@ license: MIT
 
 Place dramatic weight inside ordinary actions, spatial distance, ambient sound, and omission. For moving-image work, treat the supplied `Kenopsia` video as a binding runtime reference rather than optional inspiration. Match its color relationship, exposure behavior, optical texture, selective directional motion blur, camera energy, cut rhythm, and emotional cadence while creating new people, places, actions, objects, and music.
 
-Read [Aesthetic Translation](references/aesthetic.md) before writing. Read [Reference Video Translation](references/reference-video.md) before every moving-image task, and treat its style-lock rules as defaults unless the user explicitly requests a different visual treatment. Read [Character Asset Workflow](references/character-asset-workflow.md) before generating any character asset or character audio. Read [Prompt Patterns](references/prompt-patterns.md) when producing generation prompts.
+Read [Aesthetic Translation](references/aesthetic.md) before writing. Read [Reference Video Translation](references/reference-video.md) before every moving-image task, and treat its style-lock rules as defaults unless the user explicitly requests a different visual treatment. Read [Camera and Aesthetic Language](references/camera-aesthetic-library.md) before selecting movement, lens, composition, focus, blur, and negative constraints. Read [Character Asset Workflow](references/character-asset-workflow.md) before generating any character asset or character audio. Read [Prompt Patterns](references/prompt-patterns.md) when producing generation prompts.
 
 ## Adaptive language
 
@@ -86,9 +86,11 @@ After required confirmations, generate location reference images and 2–3 keyfr
 
 ### 4. Design the shots
 
-For every shot, provide: number, duration, dramatic function, scale, camera position and motion, `blur_mode` (`anchor`, `tracking-memory`, or `transition-smear`), readable subject anchor, blur direction, character action, dialogue or sound, opening frame, closing frame, continuity anchors, image prompt, and video prompt.
+For every shot, provide: number, duration, dramatic function, one camera-recipe ID from [Camera and Aesthetic Language](references/camera-aesthetic-library.md), lens tendency, scale, angle, composition, camera/subject relationship, optional focus gesture, `blur_mode` (`anchor`, `tracking-memory`, or `transition-smear`), readable subject anchor, blur direction, character action, dialogue or sound, opening frame, closing frame, continuity anchors, image prompt, and video prompt.
 
 Favor corridor depth, door and window frames, centered subjects, silhouettes against intense backlight, tactile close-ups, and occasional gentle handheld tracking. Alternate 2–3 second fragments with at least two 5–10 second present-day anchors. Use shallow focus for sensory details and deeper focus for the final static spatial shot.
+
+Use one dominant camera intention per shot. Rough DV memories may use visceral handheld shake, snap zoom, long-lens jitter, tracking parallax, long-shutter follow, vertical descent with compensating tilt, or a single rack focus. Quiet anchors use a static handheld frame, slow push/pull, or controlled continuous retreat. Do not combine orbit, snap zoom, rack focus, long-shutter trails, and extreme shake in the same short shot.
 
 ### 5. Generate images and continuous video
 
@@ -104,7 +106,7 @@ Set the aspect ratio only for the storyboard and initial video. After the initia
 
 Prioritize a slow original lo-fi instrumental pulse, then ambient bed and tactile action details. Use warm analog synth pads, restrained drums, wind, muffled footsteps, cloth or paper movement, room resonance, or comparable sounds. Align hard cuts with beats or musical turns while keeping at least one ambience-only passage. Avoid dialogue unless explicitly requested.
 
-When music is requested or a compatible action is connected, generate a fully original instrumental cue matched to the verified final video duration. Preserve the completed video if audio generation or embedding fails; retry only the failed audio unit through the bounded recovery in [Continuous Video Generation](references/video-generation-workflow.md).
+End visual-generation prompts with `no background music` when soundtrack work is handled separately. When music is requested or a compatible action is connected, generate a fully original instrumental cue matched to the verified final video duration. Preserve the completed video if audio generation or embedding fails; retry only the failed audio unit through the bounded recovery in [Continuous Video Generation](references/video-generation-workflow.md).
 
 For a dialogue-free film, assign one recognizable ambient sound to each section and use one sound bridge or deliberate withdrawal of sound for the emotional turn.
 

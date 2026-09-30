@@ -29,7 +29,10 @@ Score each item from 0 to 2: 0 = absent, 1 = weak, 2 = clear. Revise before deli
 ## Image and motion
 
 - Each shot has one primary action that fits its duration.
+- Each shot names one C1–C10 camera recipe, one lens tendency, one composition, and at most one focus/exposure gesture.
+- Camera behavior matches narrative function: rough handheld for memory eruption, parallax tracking for lateral movement, precise vertical/tilt tracking for hand action, and controlled retreat for liminal space.
 - Camera movement has a narrative reason; otherwise the camera is locked.
+- No short shot combines incompatible snap zoom, orbit, rack focus, long-shutter trails, extreme shake, and architectural travel.
 - Every close-up adds information rather than decoration.
 - Medium shots, wide shots, and breathing shots preserve a lived-in space.
 - No face drift, malformed bodies, invented objects, text, or watermarks remain.
@@ -41,6 +44,8 @@ Score each item from 0 to 2: 0 = absent, 1 = weak, 2 = clear. Revise before deli
 - Motivated backlight, visible beams or flare, localized highlight clipping, soft bloom, and amber-red halation remain visible without turning the image into flat haze.
 - Organic film grain, slight edge softness, and restrained red/cyan chromatic fringing survive across the full video; skin is not denoised or beauty-retouched.
 - Every shot declares `anchor`, `tracking-memory`, or `transition-smear`. Blur is optical, directional, and aligned to movement; a readable subject or spatial anchor remains.
+- `Motion blur-free` is scoped to the readable subject when the background is meant to streak; it is never used as a contradictory whole-frame negative.
+- Step-printed discrete trails and continuous directional smear are never requested together in the same shot.
 - Held portraits and the ending remain legible. No whole-frame Gaussian blur, duplicated anatomy, frame interpolation, optical-flow warping, or unrelated ghost trail remains.
 - Brief tactile fragments alternate with longer spatial anchors; hard cuts follow musical beats or turns.
 - Camera movement is limited to gentle handheld tracking, a very slow reveal, or a locked frame with internal motion.
@@ -60,6 +65,7 @@ Score each item from 0 to 2: 0 = absent, 1 = weak, 2 = clear. Revise before deli
 - The initial video traces back to its storyboard image and visual references.
 - Every extension consumes the immediately preceding verified complete video and returns a longer complete video.
 - Every video prompt starts its local timeline at `00:00`; extension requests contain no `ratio` field.
+- Every video prompt follows the style → camera recipe → lens/composition → action → camera/subject relationship → focus/temporal behavior → atmosphere → targeted negatives order.
 - The final artifact is not assembled from independent clips, loops, freezes, speed changes, or padding.
 - The latest verified video duration matches the locked target within the action's declared tolerance.
 

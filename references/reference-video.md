@@ -92,7 +92,7 @@ Keep the shape “empty present → memory fragments → altered present.” A s
 
 ## Prompt style kernel
 
-Adapt and repeat this kernel in every final storyboard and video prompt:
+Adapt and repeat this kernel in every final storyboard and video prompt, then append one compatible movement recipe from [Camera and Aesthetic Language](camera-aesthetic-library.md):
 
 ```text
 Use the attached Kenopsia reference as the binding visual target. Dreamlike live-action memory film, 16:9, 24-fps appearance. Preserve its high-contrast split grade: localized white-gold or fire-orange highlight clipping, warm skin inside blue-green and olive-teal shadows, intense motivated backlight, visible beams, soft bloom, amber-red halation, organic 35 mm grain, slight edge softness, and restrained red/cyan chromatic fringing. Use [anchor / tracking-memory / transition-smear] blur mode: [shot-specific directional blur behavior and readable subject anchor]. Keep blur optical, exposure-integrated, and aligned to actual movement. Preserve tactile lived-in detail and melancholy without melodrama. No beige pastel grade, neutral documentary color, generic commercial orange-teal, clean HDR, uniform post blur, frame interpolation, logos, captions, watermarks, or copied signature imagery.

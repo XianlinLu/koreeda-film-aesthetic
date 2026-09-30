@@ -30,6 +30,7 @@ Plan one continuous film and record:
 
 - character identity, wardrobe, and carried objects;
 - location geometry, weather, light direction, and color;
+- one C1–C10 camera recipe, lens tendency, composition, and at most one focus/exposure gesture for each beat;
 - opening action and continuation-ready end state for each generation call;
 - prop positions, screen direction, camera behavior, and emotional progression;
 - dialogue, ambience, action sound, and music curve.
@@ -53,6 +54,7 @@ After the action returns, verify:
 - the `Kenopsia` style invariants are visibly present rather than added as a final filter;
 - shadows remain cyan-green or olive-teal, highlights remain white-gold or fire-orange, and localized clipping, bloom, halation, and grain agree with the approved look test;
 - motion blur matches the declared mode and movement vector without whole-frame Gaussian softness, doubled anatomy, or optical-flow warping;
+- the selected camera recipe remains legible and is not diluted by incompatible zoom, orbit, rack-focus, shake, or tracking instructions;
 - the final frame is suitable for continuation.
 
 Use the actual returned ratio only for validation and delivery metadata.

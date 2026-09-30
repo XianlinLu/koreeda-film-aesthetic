@@ -6,7 +6,7 @@
 2. Style lock: uploaded `reference_00_kenopsia`, `style_lock_00`, four look-test images, one motion test, and approval status.
 3. Character/location anchors: one single-character asset node per identity, confirmation status, location references, and continuity notes.
 4. Script: scene actions, dialogue, sound, and relationship changes.
-5. Storyboard: one entry per shot with start, action, end, duration, blur mode, readable anchor, and blur direction.
+5. Storyboard: one entry per shot with start, action, end, duration, C1–C10 camera recipe, lens/composition, focus gesture, blur mode, readable anchor, and blur direction.
 6. Keyframes: opening, turning point, and ending visual references.
 7. Continuous video chain: initial complete video followed by sequential extensions of the latest verified complete video.
 8. Sound: dialogue, ambient bed, action detail, and music layers.
